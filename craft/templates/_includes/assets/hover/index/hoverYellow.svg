@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="559" height="611" viewBox="0 0 559 611">
+  <defs>
+    <path id="hoveryellow-b" d="M171.872574,370.241945 C171.661955,410.205552 186.204745,448.859954 212.872424,478.625411 C315.139527,592.773928 530.084187,766.900712 685.321014,573.58742 C863.925548,351.174226 270.366234,-76.7925673 213.077988,111.921658 C179.476746,222.607605 172.169967,313.774268 171.872574,370.241945"/>
+    <filter id="hoveryellow-a" width="104.9%" height="105%" x="-1.6%" y="-1.3%" filterUnits="objectBoundingBox">
+      <feOffset dx="5" dy="9" in="SourceAlpha" result="shadowOffsetOuter1"/>
+      <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="3"/>
+      <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0.261665604   0 0 0 0 0.258408206   0 0 0 0 0.258408206  0 0 0 0.562018795 0"/>
+    </filter>
+  </defs>
+  <g fill="none" fill-rule="evenodd" transform="translate(-171 -65)">
+    <use fill="#000" filter="url(#hoveryellow-a)" xlink:href="#hoveryellow-b"/>
+    <use fill="#FFE800" xlink:href="#hoveryellow-b"/>
+  </g>
+</svg>

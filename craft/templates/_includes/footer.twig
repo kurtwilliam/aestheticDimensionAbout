@@ -1,0 +1,47 @@
+{% cache globally %}
+<footer class="footer">
+    <div class="footer__inner">
+
+        <div class="footer__section">
+            {% for entry in craft.entries.section('services') %}
+                <h4 class="footer__title">{{ entry.title }}</h4>
+                <ul class="footer__list">
+                    {% for block in entry.sectionField.fullSection %}
+                        <li><a href="{{ entry.url }}#{{ block.heading | kebab }}" class="footer__link">{{ block.heading }}</a></li>
+                    {% endfor %}
+                </ul>
+            {% endfor %}
+        </div>
+
+        <div class="footer__section">
+            <h4 class="footer__title">About</h4>
+            <ul class="footer__list">
+                <li><a href="{{ craft.entries.section('contact').first().url }}" class="footer__link">{{ craft.entries.section('contact').first().title }}</a></li>
+                <li><a href="https://blog.spently.com" class="footer__link" target="_blank">Blog</a></li>
+            </ul>
+        </div>
+
+        <div class="footer__section">
+            <h4 class="footer__title">Resources</h4>
+            <ul class="footer__list">
+                <li><a href="{{ craft.entries.section('faqIndex').first().url }}" class="footer__link">FAQ</a></li>
+                <li><a href="{{ craft.entries.section('inspirationIndex').first().url }}" class="footer__link">Inspiration</a></li>
+                <li><a href="{{ craft.entries.section('contact').first().url }}" class="footer__link">Request a Demo</a></li>
+                <li><a href="https://apps.shopify.com/spently" class="footer__link" target="_blank">Try for Free</a></li>
+            </ul>
+        </div>
+
+        {% if craft.entries.section('legal') | length %}
+            <div class="footer__section">
+                <h4 class="footer__title">Legal</h4>
+                <ul class="footer__list">
+                    {% for article in craft.entries.section('legal') %}
+                        <li><a href="{{ article.url }}" class="footer__link">{{ article.title }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        {% endif %}
+
+    </div>
+</footer>
+{% endcache %}

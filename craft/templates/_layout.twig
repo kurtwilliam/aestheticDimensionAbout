@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<title>{% if title is defined %}{{ title }} - {% endif %}{{ siteName }}</title>
+	<meta name="keywords" content="aesthetic, dimension, design">
+	<link rel="stylesheet" href="/styles/style.css">
+	<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico"/>
+	<meta name="description" content="Aesthetic Dimension is a strategic and holistic design firm for the interconnected contemporary world. We create integrated, smart and effective digital and physical systems.">
+
+	<!-- Facebook Sharing -->
+	<!-- Twitter Sharing -->
+
+	{% if entry.title %}
+	<meta property="og:type" content="article" />
+
+	<meta property="og:url" content="{% if entry.url %}{{ entry.url }}{% else %}{{ siteUrl }}{% endif %}">
+
+	<meta property="og:description" content="{% if entry.projectFirstParagraph %}{{ entry.projectFirstParagraph }}{% elseif entry.summary %}{{ entry.summary }}{% else %}Aesthetic Dimension is a strategic and holistic design firm for the interconnected contemporary world. We create integrated, smart and effective digital and physical systems.{% endif %}">
+	<meta name="twitter:description" content="{% if entry.projectFirstParagraph %}{{ entry.projectFirstParagraph }}{% elseif entry.summary %}{{ entry.summary }}{% else %}Aesthetic Dimension is a strategic and holistic design firm for the interconnected contemporary world. We create integrated, smart and effective digital and physical systems.{% endif %}">
+
+	<meta property="og:site_name" content="{{ siteName }}"/>
+
+	<meta property="og:title" content="{% if entry.title %}{{ entry.title }}{% else %}Aesthetic Dimension{% endif %}">
+	<meta name="twitter:title" content="{% if entry.title %}{{ entry.title }}{% else %}Aesthetic Dimension{% endif %}">
+
+	<meta property="og:image" content="{% set image = block.image.first() %}{% if image %}{{ entry.image.first() }}{% else %}http://www.aestheticdimension.com/assets/svg/landingPage.jpg{% endif %}">
+	<meta name="twitter:image" content="{% set image = block.image.first() %}{% if image %}{{ entry.image.first() }}{% else %}http://www.aestheticdimension.com/assets/svg/landingPage.jpg{% endif %}">
+
+	{% else %}
+	
+	<meta property="og:title" content="Aesthetic Dimension">
+	<meta name="twitter:title" content="Aesthetic Dimension">
+
+	<meta property="og:description" content="Aesthetic Dimension is a strategic and holistic design firm for the interconnected contemporary world. We create integrated, smart and effective digital and physical systems.">
+	<meta name="twitter:description" content="Aesthetic Dimension is a strategic and holistic design firm for the interconnected contemporary world. We create integrated, smart and effective digital and physical systems.">
+
+	<meta property="og:image" content="http://www.aestheticdimension.com/assets/svg/landingPage.jpg">
+	<meta name="twitter:image" content="http://www.aestheticdimension.com/assets/svg/landingPage.jpg">
+
+	<meta property="og:url" content="{{ siteUrl }}">
+
+	{% endif %}
+</head>
+	{% block content %}{% endblock %}
+</main>
+<script src="/scripts/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="427" height="344" viewBox="0 0 427 344">
+  <defs>
+    <linearGradient id="hoverblue2-a" x1="100.019%" x2="-.006%" y1="50.023%" y2="50.023%">
+      <stop offset="0%" stop-color="#009ACD"/>
+      <stop offset="42.81%" stop-color="#009ACD"/>
+      <stop offset="100%" stop-color="#009ACD" stop-opacity=".6"/>
+    </linearGradient>
+    <linearGradient id="hoverblue2-c" x1="40.828%" x2="66.665%" y1="19.825%" y2="70.774%">
+      <stop offset="0%" stop-color="#009ACD"/>
+      <stop offset="25.6%" stop-color="#009ACD"/>
+      <stop offset="100%" stop-color="#009ACD" stop-opacity=".6"/>
+    </linearGradient>
+    <linearGradient id="hoverblue2-b" x1="100.064%" x2="-.543%" y1="50.009%" y2="50.009%">
+      <stop offset="20.54%" stop-color="#4E81BD"/>
+      <stop offset="100%" stop-color="#4E81BD" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <g fill="none">
+    <ellipse cx="90.2" cy="252.8" fill="url(#hoverblue2-a)" rx="89.3" ry="90.3"/>
+    <path fill="url(#hoverblue2-c)" stroke="url(#hoverblue2-b)" stroke-width=".491" d="M339,0.8 C319.3,0.8 301.2,7.5 286.6,18.8 L47.8,173.6 C47.8,173.6 74.2,163.6 91,164.1 C139,165.6 176.3,204.8 177.9,253.1 C178.8,279.1 161.3,317.5 131.5,332.9 L379.3,168.7 C383.7,166.3 387.9,163.6 391.8,160.5 L391.8,160.5 C412.5,144.2 425.9,118.6 425.9,89.8 C425.9,40.7 387,0.8 339,0.8 Z"/>
+    <path fill="url(#hoverblue2-c)" stroke="url(#hoverblue2-b)" stroke-width=".491" d="M339,0.8 C319.3,0.8 301.2,7.5 286.6,18.8 L47.8,173.6 C47.8,173.6 74.2,163.6 91,164.1 C139,165.6 176.3,204.8 177.9,253.1 C178.8,279.1 161.3,317.5 131.5,332.9 L379.3,168.7 C383.7,166.3 387.9,163.6 391.8,160.5 L391.8,160.5 C412.5,144.2 425.9,118.6 425.9,89.8 C425.9,40.7 387,0.8 339,0.8 Z"/>
+  </g>
+</svg>

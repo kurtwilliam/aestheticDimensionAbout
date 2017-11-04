@@ -1,5 +1,3 @@
- // Ch
-
 // Home SVG
 
 // Get SVG's and LI
@@ -23,7 +21,6 @@ function homeOut(x) {
 	// home.classList.remove('vHiddenHome')
 	homeHover.classList.add('vHiddenHome')
 }
-
 
 // Get form, if it exists run code
 let form = document.getElementById('form');
@@ -56,14 +53,6 @@ if ( form ) {
 			bCL.style.left = '100px'
 			bCR.style.width = '0'
 
-			// function pulseGreenActive() {
-			// 	bCL.style.zIndex = '-10'
-			// 	bCR.style.zIndex = '-10'
-
-
-			// 	// Add class to make 
-			// 	cB.classList.add
-			// }
 		} else {
 			bCL.style.width = '100px'
 			bCL.style.left = '0px'
@@ -74,13 +63,12 @@ if ( form ) {
 
 
 burger.addEventListener('click', (e) => {
-	console.log('hi')
 	burger.classList.toggle('open')
 });
 
 // never even runs...
 function windowResize() {
-	if (window.matchMedia("(min-width: 769px)").matches) {	
+	if (window.matchMedia("(min-width: 770px)").matches) {	
 	
 	} else {
 		burger.classList.remove("vHidden");
@@ -88,10 +76,9 @@ function windowResize() {
 			// if burger has class of open move menu up
 			if (burger.classList.contains('open')) {
 				leftColumn.style.top = '0'
-				// burger.classList.remove('open')
 			// else move it back
 			} else {
-				leftColumn.style.top = '-323px'
+				leftColumn.style.top = '-330px'
 				// burger.classList.add('open')
 			}
 		});
@@ -105,7 +92,7 @@ function resize() {
 
 	let leftColumn = document.getElementById('leftColumn');
 
-	if ( w < 768 ) {
+	if ( w <= 770 ) {
 		burger.classList.remove("vHidden");
 		leftColumn.classList.remove('under300L')
 
@@ -117,13 +104,13 @@ function resize() {
 				// burger.classList.remove('open')
 			// else move it back
 			} else {
-				leftColumn.style.top = '-323px'
+				leftColumn.style.top = '-330px'
 				leftColumn.style.left = '0'
 				// burger.classList.add('open')
 			}
 		});
 		burger.classList.add('mobileBurger');
-		leftColumn.style.top = '-323px'
+		leftColumn.style.top = '-330px'
 
 	} else {
 		burger.classList.remove('mobileBurger');
@@ -132,14 +119,15 @@ function resize() {
 		burger.addEventListener('click', (e) => {
 			// if burger has class of open move menu over
 			if (burger.classList.contains('open')) {
-				leftColumn.style.left = '0'
+				leftColumn.classList.remove('under300Lleft')
 				leftColumn.style.top = '0'
 
 				// burger.classList.remove('open')
 			// else move it back
 			} else {
-				leftColumn.style.left = '-290px'
+				leftColumn.classList.add('under300Lleft')
 				leftColumn.style.top = '0'
+
 
 				// burger.classList.add('open')
 			}
@@ -162,23 +150,26 @@ function testScroll(){
 	let burgerMenu = document.getElementById('burgerMenu');
 	let responsiveTitle = document.getElementById('responsiveTitle');
 	let socialMedia = document.getElementById('socialMedia');
-
+	let socialMediaTwo = document.getElementById('socialMediaTwo')
 
 	// If screen is wider than 768px run if statement below
-	if (window.matchMedia("(min-width: 769px)").matches) {
-
+	if (window.matchMedia("(min-width: 770px)").matches && socialMedia ) {
 		// burger on click move left column over to see menu options
 		burger.addEventListener('click', (e) => {
 			// if burger has class of open move menu over
 			if (burger.classList.contains('open')) {
-				leftColumn.style.left = '0'
-				leftColumn.style.top = '0'
+				// leftColumn.style.left = '0'
+				// leftColumn.style.top = '0'
+
+				rightColumn.classList.remove('under300R');
 
 				// burger.classList.remove('open')
 			// else move it back
 			} else {
-				leftColumn.style.left = '-290px'
-				leftColumn.style.top = '0'
+				// leftColumn.style.left = '-22.5%'
+				// leftColumn.style.top = '0'
+
+				rightColumn.classList.add('under300R');
 
 				// burger.classList.add('open')
 			}
@@ -188,10 +179,11 @@ function testScroll(){
 		if(window.pageYOffset>250 && socialMedia) {
 			// if the scroll is lower than 250px from top move left sidebar over and make skinny, and make right sidebar wider, and add burger menu
 			leftColumn.classList.add('under300L');
+			leftColumn.classList.add('under300Lleft');
 			rightColumn.classList.add('under300R');
 			burger.classList.add('under300Burger');
 			burger.classList.remove('vHidden');
-			leftColumn.style.left = '-290px'
+			// leftColumn.style.left = '-22.5%'
 
 		} else {
 			// if the scroll isn't lower than 250px from top move back to normal setup and make right sidebar normal 
@@ -199,14 +191,12 @@ function testScroll(){
 			rightColumn.classList.remove('under300R');
 			burger.classList.add('vHidden');
 			burger.classList.remove('under300Burger');
+			leftColumn.classList.remove('under300Lleft');
 			
-			leftColumn.style.left = '0'
+			// leftColumn.style.left = '0'
 			// responsiveTitle.classList.add('hidden')
 		}
-	// else if screen is less than 769px
-	} else {
-
-	}
+	} 
 }
 
 // search input show/hide
@@ -222,7 +212,7 @@ if (blogSearch) {
 	let blogSearchContainer = document.getElementById('blogSearchContainer')
 	let blogSearchMeter = document.getElementById('blogSearchMeter')
 	let blogSearchBar = document.getElementById('blogSearchBar')
-	let blogSearchImg = document.getElementById('blogSearchImg')
+	let blogSearchImg = document.querySelector('#blogSearchImg')
 
 	blogSearchImg.addEventListener('click', blogSearchWidth);
 	
@@ -250,4 +240,18 @@ let mailLink = document.querySelector('.mailLink');
 if (mailLink) {
 	var index = mailLink.stringify.indexOf('@')
 	console.log(index);
+}
+
+// Keep height fixed for blog page so scroll function doesn't mess up at bottom
+
+let socialMedia = document.getElementById('socialMedia');
+
+if (socialMedia) {
+	let rightColumnRender = document.getElementById('rightColumn');
+	let rightColumnHeight = document.getElementById('rightColumn').scrollHeight;
+
+	console.log(rightColumnHeight);
+
+	rightColumnRender.style.minHeight = `${rightColumnHeight}px !important`
+
 }

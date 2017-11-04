@@ -1,0 +1,108 @@
+{% extends "_layout.twig" %}
+{% set title = "Blog" %}
+
+{% block content %}
+
+<body>
+<main>
+
+<section class="twoColumns">
+	<div class="leftColumn leftColumnBlog" id="leftColumn">
+		<div class="responsiveTitle" id="responsiveTitle">
+			<p id="pageTitle">blog</p>
+			<div class="burger vHidden" id="burger">
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+		</div>
+		<ul id="burgerMenu">
+			<li><a href="about">about</a></li>
+			<li><a href="projects">projects</a></li>
+			<li><a href="blog" class="onPage">blog</a></li>
+			<li><a href="contact">contact</a></li>
+			<li><a id="homeSVG" href="index">
+				<svg id="home" xmlns="http://www.w3.org/2000/svg" width="45" heighft="48" viewBox="0 0 45 48">
+				<g fill="none" fill-rule="evenodd" transform="translate(1 1)">
+				<path stroke="#000" d="M38.6022727,46 L26.875,46 C26.5818182,46 26.3863636,45.8064516 26.3863636,45.516129 L26.3863636,32.4516129 L16.6136364,32.4516129 L16.6136364,45.516129 C16.6136364,45.8064516 16.4181818,46 16.125,46 L4.39772727,46 C4.10454545,46 3.90909091,45.8064516 3.90909091,45.516129 L3.90909091,22.1451613 C3.90909091,22 3.95795455,21.9032258 4.05568182,21.8064516 L21.1579545,4.96774194 C21.3534091,4.77419355 21.6465909,4.77419355 21.8420455,4.96774194 L38.9443182,21.8064516 C39.0420455,21.9032258 39.0909091,22 39.0909091,22.1451613 L39.0909091,45.516129 C39.0909091,45.8064516 38.8954545,46 38.6022727,46 Z M27.3636364,45.0322581 L38.1136364,45.0322581 L38.1136364,22.3387097 L21.5,5.93548387 L4.88636364,22.3387097 L4.88636364,45.0322581 L15.6363636,45.0322581 L15.6363636,31.9677419 C15.6363636,31.6774194 15.8318182,31.483871 16.125,31.483871 L26.875,31.483871 C27.1681818,31.483871 27.3636364,31.6774194 27.3636364,31.9677419 L27.3636364,45.0322581 Z"/>
+				<path stroke="#19181B" d="M42.3647727,21.9677419 C42.2181818,21.9677419 42.1204545,21.9193548 42.0227273,21.8225806 L21.4511364,1.4516129 L12.5579545,10.2096774 C12.4113636,10.3548387 12.2159091,10.4032258 12.0204545,10.3064516 C11.825,10.2096774 11.7272727,10.0645161 11.7272727,9.87096774 L11.7272727,4.83870968 L10.2613636,4.83870968 L10.2613636,12.483871 C10.2613636,12.6290323 10.2125,12.7258065 10.1147727,12.8225806 L0.928409091,21.8225806 C0.732954545,22.016129 0.439772727,22.016129 0.244318182,21.8225806 C0.0488636364,21.6290323 0.0488636364,21.3387097 0.244318182,21.1451613 L9.28409091,12.2419355 L9.28409091,4.35483871 C9.28409091,4.06451613 9.47954545,3.87096774 9.77272727,3.87096774 L12.2159091,3.87096774 C12.5090909,3.87096774 12.7045455,4.06451613 12.7045455,4.35483871 L12.7045455,8.70967742 L21.1090909,0.435483871 C21.3045455,0.241935484 21.5977273,0.241935484 21.7931818,0.435483871 L42.7068182,21.1451613 C42.9022727,21.3387097 42.9022727,21.6290323 42.7068182,21.8225806 C42.6090909,21.9193548 42.5113636,21.9677419 42.3647727,21.9677419 Z"/>
+				</g>
+				</svg>
+				<svg id="homeHover" class="vHiddenHome" xmlns="http://www.w3.org/2000/svg" width="45" height="48" viewBox="0 0 45 48">
+				<g fill="none" fill-rule="evenodd" transform="translate(1 1)">
+				<path fill="#000" fill-rule="nonzero" stroke="#000" d="M38.6022727,46 L26.875,46 C26.5818182,46 26.3863636,45.8064516 26.3863636,45.516129 L26.3863636,32.4516129 L16.6136364,32.4516129 L16.6136364,45.516129 C16.6136364,45.8064516 16.4181818,46 16.125,46 L4.39772727,46 C4.10454545,46 3.90909091,45.8064516 3.90909091,45.516129 L3.90909091,22.1451613 C3.90909091,22 3.95795455,21.9032258 4.05568182,21.8064516 L21.1579545,4.96774194 C21.3534091,4.77419355 21.6465909,4.77419355 21.8420455,4.96774194 L38.9443182,21.8064516 C39.0420455,21.9032258 39.0909091,22 39.0909091,22.1451613 L39.0909091,45.516129 C39.0909091,45.8064516 38.8954545,46 38.6022727,46 Z"/>
+				<path stroke="#19181B" d="M42.3647727,21.9677419 C42.2181818,21.9677419 42.1204545,21.9193548 42.0227273,21.8225806 L21.4511364,1.4516129 L12.5579545,10.2096774 C12.4113636,10.3548387 12.2159091,10.4032258 12.0204545,10.3064516 C11.825,10.2096774 11.7272727,10.0645161 11.7272727,9.87096774 L11.7272727,4.83870968 L10.2613636,4.83870968 L10.2613636,12.483871 C10.2613636,12.6290323 10.2125,12.7258065 10.1147727,12.8225806 L0.928409091,21.8225806 C0.732954545,22.016129 0.439772727,22.016129 0.244318182,21.8225806 C0.0488636364,21.6290323 0.0488636364,21.3387097 0.244318182,21.1451613 L9.28409091,12.2419355 L9.28409091,4.35483871 C9.28409091,4.06451613 9.47954545,3.87096774 9.77272727,3.87096774 L12.2159091,3.87096774 C12.5090909,3.87096774 12.7045455,4.06451613 12.7045455,4.35483871 L12.7045455,8.70967742 L21.1090909,0.435483871 C21.3045455,0.241935484 21.5977273,0.241935484 21.7931818,0.435483871 L42.7068182,21.1451613 C42.9022727,21.3387097 42.9022727,21.6290323 42.7068182,21.8225806 C42.6090909,21.9193548 42.5113636,21.9677419 42.3647727,21.9677419 Z"/>
+				</g>
+				</svg>
+			</a></li>
+		</ul>
+	</div>
+	<div class="rightColumn" id="rightColumn">
+		<div class="innerRightColumnBlog innerRightColumn">
+			<p class="mainP">Aesthetic Dimension was founded on the idea of delving deeper into the role aesthetics play in our lives and the world around us. This blog explores contemporary issues in these places.</p>
+			<div class="blogPosts">
+				{% paginate craft.entries.section('blog').limit(4) as pageInfo, pageEntries %}
+
+				{% for entry in pageEntries %}
+				<div class="blogPost">
+					<p class="blogTitle">
+						<a href="blog/{{ entry.slug }}">{{ entry.title | length > 60 ? entry.title | slice(0, 60) ~ ' …' : entry.title }}</a>
+					</p>
+					<div class="blogLine"></div>
+					<div class="blogContent">
+               {% if entry.summary %}
+						{{ entry.summary | length > 150 ? entry.summary | slice(0, 150) ~ ' ...' : entry.summary }}
+					{% endif %}
+					</div>
+					<div class="blogPostInfo">
+						<div class="blogPostTags">
+							<ul>
+								{% for tag in craft.tags.relatedTo(entry).limit(2) %}
+                           <li class="blogPostTag"><a href="tags/{{ tag.title | url_encode }}">{{ tag.title }}, </a></li>
+                        {% endfor %}
+                        {% for tag in craft.tags.relatedTo(entry).offset(2).limit(1) %}
+                           <li class="blogPostTag"><a href="tags/{{ tag.title | url_encode }}">{{ tag.title }}</a></li>
+                        {% endfor %}
+							</ul>
+						</div>
+						<p class="blogPostDate">{{ entry.postDate|date('M d, Y') }}</p>
+					</div>
+				</div>
+				{% endfor %}
+				<div class="blogPages">
+					<div class="prevPage">
+						{% if pageInfo.getPrevUrls(2)|length > 1 %}
+							<a class="prevPageTwo" href="{{ siteUrl }}blog/p{{ pageInfo.currentPage - 2 }}">…</a>
+							<a class="prevPageOne" href="{{ pageInfo.prevUrl }}">{{ pageInfo.currentPage - 1 }}</a>
+						{% elseif pageInfo.prevUrl %}
+							<a class="prevPageOne" href="{{ pageInfo.prevUrl }}">{{ pageInfo.currentPage - 1 }}</a>
+						{% endif %}
+					</div>
+					<p class="currentPage">{{ pageInfo.currentPage }}</p>
+					<div class="nextPage">
+						{% if pageInfo.getNextUrls(2)|length > 1 %}
+							<a class="nextPageOne" href="{{ pageInfo.nextUrl }}">{{ pageInfo.currentPage + 1 }}</a>
+							<a class="nextPageTwo" href="{{ siteUrl }}blog/p{{ pageInfo.currentPage + 2 }}">…</a>
+						{% elseif pageInfo.nextUrl %}
+							<a class="nextPageOne" href="{{ pageInfo.nextUrl }}">{{ pageInfo.currentPage + 1 }}</a>
+						{% endif %}
+					</div>
+				</div>
+			</div>
+			<div class="blogSearchOuter">
+				<form class="blogSearch" id="blogSearchContainer" action="{{ url('search') }}">
+					<img src="../assets/svg/searchIcon.svg" id="blogSearchImg" alt="">
+					<div class="blogSearch" id="blogSearch">
+						<input type="search" name="q" placeholder="Search ..." id="blogSearchInput">
+						<input type="submit" style="position: absolute; left: -9999px"/>
+						<div class="meter" id="blogSearchMeter"></div>
+						<span id="blogSearchBar"></span>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</section>
+
+{% endblock %}
