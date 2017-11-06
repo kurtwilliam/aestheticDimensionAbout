@@ -144,16 +144,19 @@ window.onresize = resize;
 window.onscroll=testScroll;
 
 function testScroll(){
-	let burger = document.getElementById('burger');
-	let leftColumn = document.getElementById('leftColumn');
-	let rightColumn = document.getElementById('rightColumn');
-	let burgerMenu = document.getElementById('burgerMenu');
-	let responsiveTitle = document.getElementById('responsiveTitle');
-	let socialMedia = document.getElementById('socialMedia');
-	let socialMediaTwo = document.getElementById('socialMediaTwo')
+	const burger = document.getElementById('burger');
+	const leftColumn = document.getElementById('leftColumn');
+	const rightColumn = document.getElementById('rightColumn');
+	const burgerMenu = document.getElementById('burgerMenu');
+	const responsiveTitle = document.getElementById('responsiveTitle');
+	const hideSidebar = document.getElementById('hideSidebar');
+	const socialMediaTwo = document.getElementById('socialMediaTwo');
+	const aboutTop = document.querySelector('.aboutTopContent');
+
+	
 
 	// If screen is wider than 768px run if statement below
-	if (window.matchMedia("(min-width: 770px)").matches && socialMedia ) {
+	if (window.matchMedia("(min-width: 770px)").matches && hideSidebar) {
 		// burger on click move left column over to see menu options
 		burger.addEventListener('click', (e) => {
 			// if burger has class of open move menu over
@@ -162,6 +165,7 @@ function testScroll(){
 				// leftColumn.style.top = '0'
 
 				rightColumn.classList.remove('under300R');
+				aboutTop.classList.remove('under300About');
 
 				// burger.classList.remove('open')
 			// else move it back
@@ -169,6 +173,7 @@ function testScroll(){
 				// leftColumn.style.left = '-22.5%'
 				// leftColumn.style.top = '0'
 
+				aboutTop.classList.add('under300About');
 				rightColumn.classList.add('under300R');
 
 				// burger.classList.add('open')
@@ -176,13 +181,15 @@ function testScroll(){
 		});	
 		// if the scroll is lower than 250px from top
 
-		if(window.pageYOffset>250 && socialMedia) {
+		if(window.pageYOffset>250 && hideSidebar) {
 			// if the scroll is lower than 250px from top move left sidebar over and make skinny, and make right sidebar wider, and add burger menu
 			leftColumn.classList.add('under300L');
 			leftColumn.classList.add('under300Lleft');
 			rightColumn.classList.add('under300R');
 			burger.classList.add('under300Burger');
 			burger.classList.remove('vHidden');
+			aboutTop.classList.add('under300About');
+
 			// leftColumn.style.left = '-22.5%'
 
 		} else {
@@ -192,6 +199,7 @@ function testScroll(){
 			burger.classList.add('vHidden');
 			burger.classList.remove('under300Burger');
 			leftColumn.classList.remove('under300Lleft');
+			aboutTop.classList.remove('under300About');
 			
 			// leftColumn.style.left = '0'
 			// responsiveTitle.classList.add('hidden')
@@ -239,7 +247,6 @@ let mailLink = document.querySelector('.mailLink');
 
 if (mailLink) {
 	var index = mailLink.stringify.indexOf('@')
-	console.log(index);
 }
 
 // Keep height fixed for blog page so scroll function doesn't mess up at bottom
@@ -250,8 +257,50 @@ if (socialMedia) {
 	let rightColumnRender = document.getElementById('rightColumn');
 	let rightColumnHeight = document.getElementById('rightColumn').scrollHeight;
 
-	console.log(rightColumnHeight);
-
 	rightColumnRender.style.minHeight = `${rightColumnHeight}px !important`
 
+}
+
+// About page
+
+const aboutPage = document.querySelector('.rightColumnAbout');
+
+if (aboutPage) {
+	const learnMore = document.querySelector('.learnMore');
+	const icons = document.querySelectorAll('.aboutProcessIcon');
+	let description = document.querySelectorAll('.aboutProcessDescription');
+
+	let i;
+	for (i = 0; i < icons.length; i++) {
+		icons[i].addEventListener('click', iconClicked);
+	}
+
+	function iconClicked() {
+		if (!learnMore.classList.contains('aboutHidden')){
+			learnMore.classList.add('aboutHidden')
+		}
+
+		let i;
+		for (i = 0; i < icons.length; i++) {
+			icons[i].classList.remove('descSelected');
+		}
+
+		this.classList.add('descSelected');
+
+		for (i = 0; i < description.length; i++) {
+			description[i].classList.add('aboutHidden');
+		}
+
+		if (this.classList.contains('aPI1')){
+			description[0].classList.remove('aboutHidden');
+		} else if (this.classList.contains('aPI2')) {
+			description[1].classList.remove('aboutHidden');
+		} else if (this.classList.contains('aPI3')) {
+			description[2].classList.remove('aboutHidden');
+		} else if (this.classList.contains('aPI4')) {
+			description[3].classList.remove('aboutHidden');
+		} else if (this.classList.contains('aPI5')) {
+			description[4].classList.remove('aboutHidden');
+		}
+	}
 }

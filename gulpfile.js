@@ -30,9 +30,7 @@ gulp.task('js', () => {
 
 gulp.task('bs', () => {
     browserSync.init({
-        server: {
-            baseDir: './'
-        }
+        proxy:'localhost:8888',
     });
 });
 
@@ -49,6 +47,6 @@ gulp.task("styles", () => {
 gulp.task('default', ['js','bs', 'styles'], () => {
     gulp.watch('src/**/*.js',['js']);
     gulp.watch('./craft/templates/**/*.twig');
-    gulp.watch('./public/style.css',reload);
-    gulp.watch('./src/styles/*.scss', ['styles']);
+    gulp.watch('./public/styles/style.css',reload);
+    gulp.watch('./src/styles/style.scss', ['styles']);
 });
