@@ -47,7 +47,7 @@
 				{% for entry in pageEntries %}
 				<div class="blogPost">
 					<p class="blogTitle">
-						<a href="blog/{{ entry.slug }}">{{ entry.title | length > 60 ? entry.title | slice(0, 60) ~ ' …' : entry.title }}</a>
+						<a href="{{ entry.url }}">{{ entry.title | length > 60 ? entry.title | slice(0, 60) ~ ' …' : entry.title }}</a>
 					</p>
 					<div class="blogLine"></div>
 					<div class="blogContent">

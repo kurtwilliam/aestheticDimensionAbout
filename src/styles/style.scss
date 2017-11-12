@@ -12,7 +12,7 @@ html{ margin:0; padding:0; }
 @font-face { font-family: Brandon Grotesque; font-weight: 500; src: url('../Brandon-Grotesque/Brandon_med.otf');}
 @font-face { font-family: Brandon Grotesque; font-weight: medium; src: url('../Brandon-Grotesque/Brandon_med.otf');}
 @font-face { font-family: Brandon Grotesque; font-weight: bold; src: url('../Brandon-Grotesque/Brandon_bld.otf');}
-@font-face { font-family: Brandon Grotesque; font-weight: 500i; font-style:italic; src: url('../../Brandon-Grotesque/Brandon_med_it.otf');}
+@font-face { font-family: Brandon Grotesque; font-weight: 500; font-style:italic; src: url('../Brandon-Grotesque/Brandon_med_it.otf');}
 @font-face { font-family: Brandon Grotesque; font-weight: light; src: url('../Brandon-Grotesque/Brandon_light.otf');}
 @font-face { font-family: Calluna; src: url('../Calluna/Calluna-Regular.otf');}
 @font-face { font-family: Calluna; font-weight:500; font-style:italic; src: url('../Calluna/Calluna-It.otf');}
@@ -164,7 +164,7 @@ header {
 			@media (max-width:770px) {
 				max-width: 350px;
 				line-height: 4rem;
-				font-style: italic;
+				// font-style: italic;
 				left:auto;
 				top: auto;
 				transform: translate(0,0);
@@ -579,7 +579,7 @@ blockquote {
 		}
 	}
 	.leftColumnAbout{
-		background: #fff url('../../assets/svg/page1.png');
+		background: #fff url('../assets/svg/page1.png');
 		background-size: 500px;
 		background-position: 46% 49%;
 		@media (max-width: 770px){
@@ -673,17 +673,107 @@ blockquote {
 			width:100%;
 			height:100vh;
 			position:relative;
-			
-			&Content {
+			display:flex;
+			flex-direction: column;
+			align-items: center;
+			margin:0 auto;
+			max-width:734px;
+			min-height: 100%;
+			text-align:center;
+
+			&Black {
+				position:absolute;
+				width:100vw;
+				height: 100%;
+				z-index:-10;
+				background:black;
+			}
+
+			// img {
+			// 	width:327px;
+			// 	height:158px;
+			// }
+
+			// &SVGs {
+			// 	position:fixed;
+			// 	width:100%;
+			// 	height:100%;
+			// 	// overflow:hidden;
+
+			// 	img {
+			// 		position:absolute;
+			// 		right:0;
+			// 		margin:0;
+			// 		width:auto;
+			// 		height:auto;
+			// 	}
+			// 	img:nth-child(1) {
+			// 		left:-60px;
+			// 		top:-2.5988701%;
+			// 	}
+			// 	img:nth-child(2) {
+			// 		right:50px;
+			// 		top:35px;
+			// 	}
+			// 	img:nth-child(3) {
+			// 		left:39px;
+			// 		top:205px;
+			// 	}
+			// 	img:nth-child(4) {
+			// 		right:-82px;
+			// 		top:247px;
+			// 	}
+			// 	img:nth-child(5) {
+			// 		right:741px;
+			// 		bottom:52.65%;
+			// 	}
+			// 	img:nth-child(6) {
+			// 		right:-86px;
+			// 		top:569px;
+			// 	}
+			// 	img:nth-child(7) {
+			// 		left:-34px;
+			// 		bottom:133px;
+			// 	}
+			// 	img:nth-child(8) {
+			// 		right:43.38983051%;
+			// 		bottom:14.91525424%;
+			// 	}
+			// 	img:nth-child(9) {
+			// 		right:11.52542373%;
+			// 		bottom:11.75141243%;
+			// 	}
+			// 	img:nth-child(10) {
+			// 		left:22.14689266%;
+			// 		bottom:-0.451977401%;
+			// 	}
+			// }
+
+			// h1, h2, p {
+			// 	color:white;
+			// }
+
+			// h1, h2 {
+			// 	font-family: "Calluna", serif;
+			// 	font-size:4rem;
+			// 	line-height:4rem;
+			// }
+
+			// p {
+			// 	max-width:652px;
+			// 	margin:0 auto;
+			// 	font-size:2.5rem;
+			// 	line-height:2.5rem;
+
+			// }
+			&Content{
 				display:flex;
 				position:fixed;
 				height: 100%;
 				width: calc(100% - 405px);
 				z-index:1;
-				// left:auto;
-				// transform: translate(0,0);
 				transition:all 1s ease;
-				// left: 405px;
+				max-height:100vh;
 				
 				@media(max-width:770px){
 					height:100vh;
@@ -691,7 +781,6 @@ blockquote {
 				}
 
 				@media(max-width:600px){
-					// height:100vh;
 					overflow-y:hidden;
 				}
 
@@ -701,10 +790,12 @@ blockquote {
 					transform:translate(-50%,0);
 					height:100vh;
 					z-index:5;
+					width:auto;
 				}
 
 				img.aboutTopBg:nth-of-type(1) {
 					display:block;
+					height:100%;
 					@media(max-width:770px){
 						display:none;
 					}
@@ -726,7 +817,7 @@ blockquote {
 				}
 
 				img.aboutTopBg:nth-of-type(3) {
-					width:100%;
+					height: calc(100% - 42px);
 					display:none;
 					@media(max-width:600px){
 						width:auto;
@@ -737,11 +828,18 @@ blockquote {
 
 				img.aboutTopArrow {
 					position:absolute;
-					height:auto;
-					bottom:28px;
+					height:25px;
+					bottom:2.66%;
 					left:50%;
 					transform:translate(-50%,0);
 					z-index:110;
+					width:49px;
+					cursor:pointer;
+	
+					@media(max-width:770px) {
+						width:49px;
+						height:25px;
+					}
 				}
 
 				.text {
@@ -750,7 +848,7 @@ blockquote {
 					width:100%;
 					max-width:652px;
 					text-align: center;
-					top:320px;
+					top:255px;
 					left:50%;
 					transform: translate(-50%,0);
 					z-index:5;
@@ -800,104 +898,11 @@ blockquote {
 					}
 				}
 			}
-
-			&Black {
-				position:absolute;
-				width:100vw;
-				height: 100%;
-				z-index:-10;
-				background:black;
-			}
-				/*
-				display:flex;
-				flex-direction: column;
-				align-items: center;
-				margin:0 auto;
-				max-width:734px;
-				min-height: 100%;
-				text-align:center;
-				position:relative;
-
-				img {
-					width:327px;
-					height:158px;
-				}
-			}
-
-			&SVGs {
-				position:absolute;
-				width:100%;
-				height:100%;
-				// overflow:hidden;
-
-				img {
-					position:absolute;
-					right:0;
-					margin:0;
-					width:auto;
-					height:auto;
-				}
-				img:nth-child(1) {
-					left:-60px;
-					top:-2.5988701%;
-				}
-				img:nth-child(2) {
-					right:50px;
-					top:35px;
-				}
-				img:nth-child(3) {
-					left:39px;
-					top:205px;
-				}
-				img:nth-child(4) {
-					right:-82px;
-					top:247px;
-				}
-				img:nth-child(5) {
-					right:741px;
-					bottom:52.65%;
-				}
-				img:nth-child(6) {
-					right:-86px;
-					top:569px;
-				}
-				img:nth-child(7) {
-					left:-34px;
-					bottom:133px;
-				}
-				img:nth-child(8) {
-					right:43.38983051%;
-					bottom:14.91525424%;
-				}
-				img:nth-child(9) {
-					right:11.52542373%;
-					bottom:11.75141243%;
-				}
-				img:nth-child(10) {
-					left:22.14689266%;
-					bottom:-0.451977401%;
-				}
-			}
-
-			h1, h2, p {
-				color:white;
-			}
-
-			h1, h2 {
-				font-family: "Calluna", serif;
-				font-size:4rem;
-				line-height:4rem;
-			}
-
-			p {
-				max-width:652px;
-				margin:0 auto;
-				font-size:2.5rem;
-				line-height:2.5rem;
-
-			}
-			*/
 		}
+	// }
+			
+			// &Content {
+		
 
 		&Header {
 			width:100%;
@@ -908,7 +913,7 @@ blockquote {
 			background:#fff;
 
 			@media(max-width:550px) {
-				margin-top:25px;
+				//margin-top:25px;
 			}
 
 			img {
@@ -968,8 +973,6 @@ blockquote {
 						margin-left:15px;
 					}
 				}
-
-
 			}
 		}
 
@@ -977,7 +980,6 @@ blockquote {
 			max-width: 473px;
 			margin:0 auto;
 			z-index:20;
-			background:#fff;
 
 			@media(max-width:550px) {
 				margin:0 40px;
@@ -1032,6 +1034,7 @@ blockquote {
 				}
 				@media(max-width:770px) {
 					margin-top:110px;
+					padding-top:0;
 				}
 				@media(max-width:600px) {
 					margin-top:54px;
@@ -1349,33 +1352,43 @@ blockquote {
 			}
 
 			&Descriptions {
+				display:flex;
+				position:relative;
+				transition: right 600ms ease;
 				.learnMore {
-					font-size:3.5rem;
-					line-height: 3rem;
-					color:#868788;
-					font-family:'Brandon Grotesque', sans-serif;
-					font-weight:bold;
-					width:225px;
 					text-align: center;
 					margin:40px auto 0;
+					min-width:100%;
+
+					p {
+						max-width:225px;
+						margin:0 auto;
+						font-size:3.5rem;
+						line-height: 3rem;
+						color:#868788;
+						font-family:'Brandon Grotesque', sans-serif;
+						font-weight:bold;
+					}
 				}
-				
+				/*
 				.aboutHidden {
 					opacity:0 !important;
 					visibility: hidden !important;
 					position:absolute !important;
 					border:none !important;
-				}
+				}*/
 			}
 
 			&Description {
 				margin-top:59px;
 				display:flex;
 				justify-content: space-between;
+				min-width:100%;
+				transition: all 600ms ease;
 
 				@media(max-width:730px){
 					flex-direction: column;
-					margin: 59px 40px 0;
+					margin: 59px 0 0 80px;
 				}
 
 				.info {
@@ -1542,7 +1555,7 @@ blockquote {
 			&Row:nth-child(4) img { left:70px; }
 
 			.aboutQuote {
-				margin:0;
+				//margin:0;
 			}
 		}
 
@@ -1635,7 +1648,8 @@ blockquote {
 			}
 		}
 		&Footer {
-			margin: 87px auto 11px;
+			margin: 87px auto 0;
+			padding-bottom: 11px;
 			width:626px;
 			display: flex;
 			justify-content: space-between;

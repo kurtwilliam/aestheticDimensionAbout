@@ -1,3 +1,5 @@
+import animateScrollTo from 'animated-scroll-to';
+
 // Home SVG
 
 // Get SVG's and LI
@@ -85,7 +87,7 @@ function windowResize() {
 	}
 }
 
-var w = window.innerWidth;
+let w = window.innerWidth;
 
 function resize() { 
 	w = window.innerWidth;
@@ -153,8 +155,6 @@ function testScroll(){
 	const socialMediaTwo = document.getElementById('socialMediaTwo');
 	const aboutTop = document.querySelector('.aboutTopContent');
 
-	
-
 	// If screen is wider than 768px run if statement below
 	if (window.matchMedia("(min-width: 770px)").matches && hideSidebar) {
 		// burger on click move left column over to see menu options
@@ -165,7 +165,7 @@ function testScroll(){
 				// leftColumn.style.top = '0'
 
 				rightColumn.classList.remove('under300R');
-				aboutTop.classList.remove('under300About');
+				//aboutTop.classList.remove('under300About');
 
 				// burger.classList.remove('open')
 			// else move it back
@@ -173,7 +173,7 @@ function testScroll(){
 				// leftColumn.style.left = '-22.5%'
 				// leftColumn.style.top = '0'
 
-				aboutTop.classList.add('under300About');
+				//aboutTop.classList.add('under300About');
 				rightColumn.classList.add('under300R');
 
 				// burger.classList.add('open')
@@ -188,7 +188,7 @@ function testScroll(){
 			rightColumn.classList.add('under300R');
 			burger.classList.add('under300Burger');
 			burger.classList.remove('vHidden');
-			aboutTop.classList.add('under300About');
+			//aboutTop.classList.add('under300About');
 
 			// leftColumn.style.left = '-22.5%'
 
@@ -199,7 +199,7 @@ function testScroll(){
 			burger.classList.add('vHidden');
 			burger.classList.remove('under300Burger');
 			leftColumn.classList.remove('under300Lleft');
-			aboutTop.classList.remove('under300About');
+			//aboutTop.classList.remove('under300About');
 			
 			// leftColumn.style.left = '0'
 			// responsiveTitle.classList.add('hidden')
@@ -266,23 +266,113 @@ if (socialMedia) {
 const aboutPage = document.querySelector('.rightColumnAbout');
 
 if (aboutPage) {
-	const learnMore = document.querySelector('.learnMore');
+	// click arrow in header to scroll down page
+	let topArrow = document.querySelector(".aboutTopArrow");
+	topArrow.addEventListener('click',function(){
+		const options = {
+		  speed: 3000,
+		}
+		animateScrollTo(document.querySelector('.aboutHeader'),options)
+	})
+
+	// Add event listener to icon to run 
 	const icons = document.querySelectorAll('.aboutProcessIcon');
-	let description = document.querySelectorAll('.aboutProcessDescription');
 
 	let i;
 	for (i = 0; i < icons.length; i++) {
-		icons[i].addEventListener('click', iconClicked);
+		icons[i].addEventListener('mouseover', iconMouseOver);
 	}
 
-	function iconClicked() {
-		if (!learnMore.classList.contains('aboutHidden')){
-			learnMore.classList.add('aboutHidden')
+	// runs on yellow rectangle hover
+	function iconMouseOver() {
+		// add the shadow hover effect to icons
+		for (let i = 0; i < icons.length; i++) {
+			icons[i].classList.remove('descSelected');
 		}
 
-		let i;
-		for (i = 0; i < icons.length; i++) {
-			icons[i].classList.remove('descSelected');
+		this.classList.add('descSelected');
+
+		// Get the margin of aboutProcessContent
+		let aboutProcessContent = document.querySelector('.aboutProcessContent');
+		let description = document.querySelectorAll('.aboutProcessDescription');
+		let processMargin = window.getComputedStyle(aboutProcessContent).getPropertyValue('margin-right').slice(0,-2);
+
+		// Get the width of aboutProcessDescriptions
+		let descriptions = document.querySelector('.aboutProcessDescriptions');
+		let descriptionsWidth = window.getComputedStyle(descriptions).getPropertyValue('width').slice(0,-2);
+		console.log(descriptionsWidth)
+
+		for (i = 0; i < description.length; i++) {
+			// Set the margin left on the description to the aboutProcessContent margin
+			description[i].style.marginLeft = `${processMargin}px`;
+
+			// Set the data-left of icon hovered equal to the margin-left + the width of the aboutProcessDesriptions * i - initial width
+			let leftOffset = (Number(processMargin) + Number(descriptionsWidth)) * (i + 1);
+
+				
+			if (window.matchMedia("(min-width: 730px)").matches) {
+
+			} else {
+				leftOffset = (Number(descriptionsWidth) + 80) * (i + 1);
+			}
+			icons[i].dataset.left = leftOffset;
+			description[i].style.marginLeft = `80px`;
+		}
+		// Move the descriptions container
+
+		descriptions.style.right = `${this.dataset.left}px`
+	}
+
+	// const learnMore = document.querySelector('.learnMore');
+
+	// function pageLoad () {
+	// 	
+
+	// 	let aboutProcess = document.querySelector('.aboutProcess');
+
+	// 	let processLeft = aboutProcess.getBoundingClientRect().left;
+	// 	console.log(processLeft);
+
+	// 	
+	// 		let leftPos = description[i].getBoundingClientRect().left;
+
+	// 		let descWidth = window.getComputedStyle(description[i]).getPropertyValue('width').slice(0,-2);
+
+	// 		let totalWidth = leftPos + Number(descWidth/2) - processLeft;
+
+	// 		description[i].dataset.left = `${totalWidth}px`
+	// 	}
+	// }
+
+	// pageLoad();
+
+	// 	
+
+	// 	let thisData = this.dataset.desc;
+	// 	let dataEl = document.getElementById(thisData).dataset.left;
+	// 	console.log(dataEl);
+	// 	descriptions.style.right = `${dataEl}`
+
+		//console.log(processWidth)
+		// console.log(processMargin)
+
+		// 	// console.log(this.getBoundingClientRect())
+
+			
+
+		// 	if (thisData === description[i].dataset.desc) {
+		// 		// console.log(description[i].dataset.desc)
+				
+		// 		//descriptions.style.left = ``
+		// 	}
+
+
+		// console.log(dataEl)
+
+
+		/*
+		if (!learnMore.classList.contains('aboutHidden')){
+			learnMore.classList.add('aboutHidden')
 		}
 
 		this.classList.add('descSelected');
@@ -302,5 +392,5 @@ if (aboutPage) {
 		} else if (this.classList.contains('aPI5')) {
 			description[4].classList.remove('aboutHidden');
 		}
-	}
+		*/
 }
