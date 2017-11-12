@@ -1344,6 +1344,17 @@ blockquote {
 						width:52px;
 					}
 				}
+
+				.corner {
+					position:absolute;
+					width:10px;
+					height:10px;
+					background-color: black;
+					z-index:-1;
+					top:-5px;
+					right:-5px;
+					display:none;
+				}
 			}
 
 			&Content {
@@ -1354,7 +1365,7 @@ blockquote {
 			&Descriptions {
 				display:flex;
 				position:relative;
-				transition: right 600ms ease;
+				transition: all 600ms ease;
 				.learnMore {
 					text-align: center;
 					margin:40px auto 0;
@@ -1370,13 +1381,6 @@ blockquote {
 						font-weight:bold;
 					}
 				}
-				/*
-				.aboutHidden {
-					opacity:0 !important;
-					visibility: hidden !important;
-					position:absolute !important;
-					border:none !important;
-				}*/
 			}
 
 			&Description {
@@ -1384,11 +1388,14 @@ blockquote {
 				display:flex;
 				justify-content: space-between;
 				min-width:100%;
+				margin-left:500px;
 				transition: all 600ms ease;
 
 				@media(max-width:730px){
 					flex-direction: column;
+					justify-content: flex-start;
 					margin: 59px 0 0 80px;
+					padding:0 40px;
 				}
 
 				.info {
@@ -1465,6 +1472,12 @@ blockquote {
 					font-size: 2.5rem;
 					margin-bottom:40px;
 					line-height: 2.5rem;
+				}
+
+				.aboutQuote {
+					@media(max-width:550px){
+						margin:0;
+					}
 				}
 			}
 
@@ -1609,7 +1622,7 @@ blockquote {
 				}
 
 				h3 {
-					min-width:150px;
+					width:150px;
 					margin-right:20px;
 					font-family:'Brandon Grotesque', sans-serif;
 					font-size:3.5rem;
@@ -1624,6 +1637,10 @@ blockquote {
 				p {
 					margin-bottom: 0;
 					width:388.29px;
+
+					@media(max-width:770px) {
+						width:auto;
+					}
 
 					@media(max-width:550px) {
 						font-size: 2rem;
@@ -1666,11 +1683,11 @@ blockquote {
 
 			@media(max-width:700px) {
 				width:calc(100% - 80px);
-				margin:87px 40px 11px;
+				margin:87px 40px 0;
 			}
 
 			@media(max-width:550px) {
-				margin:68px 40px 11px;
+				margin:68px 40px 0;
 			}
 
 			@media(max-width:450px) {

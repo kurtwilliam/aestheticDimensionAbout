@@ -258,7 +258,6 @@ if (socialMedia) {
 	let rightColumnHeight = document.getElementById('rightColumn').scrollHeight;
 
 	rightColumnRender.style.minHeight = `${rightColumnHeight}px !important`
-
 }
 
 // About page
@@ -277,20 +276,23 @@ if (aboutPage) {
 
 	// Add event listener to icon to run 
 	const icons = document.querySelectorAll('.aboutProcessIcon');
+	const corners = document.querySelectorAll('.corner');
 
 	let i;
 	for (i = 0; i < icons.length; i++) {
 		icons[i].addEventListener('mouseover', iconMouseOver);
+		icons[i].addEventListener('click', iconMouseOver);
 	}
 
 	// runs on yellow rectangle hover
 	function iconMouseOver() {
-		// add the shadow hover effect to icons
+		// add + remove the shadow/corner hover effect to icons
 		for (let i = 0; i < icons.length; i++) {
 			icons[i].classList.remove('descSelected');
+			corners[i].style.display = 'none';
 		}
 
-		this.classList.add('descSelected');
+		window.matchMedia("(min-width: 730px)").matches ? this.classList.add('descSelected') : this.querySelector('.corner').style.display = "block";
 
 		// Get the margin of aboutProcessContent
 		let aboutProcessContent = document.querySelector('.aboutProcessContent');
@@ -300,7 +302,6 @@ if (aboutPage) {
 		// Get the width of aboutProcessDescriptions
 		let descriptions = document.querySelector('.aboutProcessDescriptions');
 		let descriptionsWidth = window.getComputedStyle(descriptions).getPropertyValue('width').slice(0,-2);
-		console.log(descriptionsWidth)
 
 		for (i = 0; i < description.length; i++) {
 			// Set the margin left on the description to the aboutProcessContent margin
@@ -308,89 +309,16 @@ if (aboutPage) {
 
 			// Set the data-left of icon hovered equal to the margin-left + the width of the aboutProcessDesriptions * i - initial width
 			let leftOffset = (Number(processMargin) + Number(descriptionsWidth)) * (i + 1);
-
 				
 			if (window.matchMedia("(min-width: 730px)").matches) {
 
 			} else {
+				description[i].style.marginLeft = `80px`;
 				leftOffset = (Number(descriptionsWidth) + 80) * (i + 1);
 			}
 			icons[i].dataset.left = leftOffset;
-			description[i].style.marginLeft = `80px`;
 		}
 		// Move the descriptions container
-
 		descriptions.style.right = `${this.dataset.left}px`
 	}
-
-	// const learnMore = document.querySelector('.learnMore');
-
-	// function pageLoad () {
-	// 	
-
-	// 	let aboutProcess = document.querySelector('.aboutProcess');
-
-	// 	let processLeft = aboutProcess.getBoundingClientRect().left;
-	// 	console.log(processLeft);
-
-	// 	
-	// 		let leftPos = description[i].getBoundingClientRect().left;
-
-	// 		let descWidth = window.getComputedStyle(description[i]).getPropertyValue('width').slice(0,-2);
-
-	// 		let totalWidth = leftPos + Number(descWidth/2) - processLeft;
-
-	// 		description[i].dataset.left = `${totalWidth}px`
-	// 	}
-	// }
-
-	// pageLoad();
-
-	// 	
-
-	// 	let thisData = this.dataset.desc;
-	// 	let dataEl = document.getElementById(thisData).dataset.left;
-	// 	console.log(dataEl);
-	// 	descriptions.style.right = `${dataEl}`
-
-		//console.log(processWidth)
-		// console.log(processMargin)
-
-		// 	// console.log(this.getBoundingClientRect())
-
-			
-
-		// 	if (thisData === description[i].dataset.desc) {
-		// 		// console.log(description[i].dataset.desc)
-				
-		// 		//descriptions.style.left = ``
-		// 	}
-
-
-		// console.log(dataEl)
-
-
-		/*
-		if (!learnMore.classList.contains('aboutHidden')){
-			learnMore.classList.add('aboutHidden')
-		}
-
-		this.classList.add('descSelected');
-
-		for (i = 0; i < description.length; i++) {
-			description[i].classList.add('aboutHidden');
-		}
-
-		if (this.classList.contains('aPI1')){
-			description[0].classList.remove('aboutHidden');
-		} else if (this.classList.contains('aPI2')) {
-			description[1].classList.remove('aboutHidden');
-		} else if (this.classList.contains('aPI3')) {
-			description[2].classList.remove('aboutHidden');
-		} else if (this.classList.contains('aPI4')) {
-			description[3].classList.remove('aboutHidden');
-		} else if (this.classList.contains('aPI5')) {
-			description[4].classList.remove('aboutHidden');
-		}
-		*/
 }
