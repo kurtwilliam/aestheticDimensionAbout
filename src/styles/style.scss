@@ -653,9 +653,7 @@ blockquote {
 		}
 	}
 	.under300About {
-				width: calc(100% - 85px);
-		// left:calc(50% + 85px);
-		// transform: translate(-50%,0);
+		width: calc(100% - 85px);
 	}
 }
 
@@ -689,83 +687,6 @@ blockquote {
 				background:black;
 			}
 
-			// img {
-			// 	width:327px;
-			// 	height:158px;
-			// }
-
-			// &SVGs {
-			// 	position:fixed;
-			// 	width:100%;
-			// 	height:100%;
-			// 	// overflow:hidden;
-
-			// 	img {
-			// 		position:absolute;
-			// 		right:0;
-			// 		margin:0;
-			// 		width:auto;
-			// 		height:auto;
-			// 	}
-			// 	img:nth-child(1) {
-			// 		left:-60px;
-			// 		top:-2.5988701%;
-			// 	}
-			// 	img:nth-child(2) {
-			// 		right:50px;
-			// 		top:35px;
-			// 	}
-			// 	img:nth-child(3) {
-			// 		left:39px;
-			// 		top:205px;
-			// 	}
-			// 	img:nth-child(4) {
-			// 		right:-82px;
-			// 		top:247px;
-			// 	}
-			// 	img:nth-child(5) {
-			// 		right:741px;
-			// 		bottom:52.65%;
-			// 	}
-			// 	img:nth-child(6) {
-			// 		right:-86px;
-			// 		top:569px;
-			// 	}
-			// 	img:nth-child(7) {
-			// 		left:-34px;
-			// 		bottom:133px;
-			// 	}
-			// 	img:nth-child(8) {
-			// 		right:43.38983051%;
-			// 		bottom:14.91525424%;
-			// 	}
-			// 	img:nth-child(9) {
-			// 		right:11.52542373%;
-			// 		bottom:11.75141243%;
-			// 	}
-			// 	img:nth-child(10) {
-			// 		left:22.14689266%;
-			// 		bottom:-0.451977401%;
-			// 	}
-			// }
-
-			// h1, h2, p {
-			// 	color:white;
-			// }
-
-			// h1, h2 {
-			// 	font-family: "Calluna", serif;
-			// 	font-size:4rem;
-			// 	line-height:4rem;
-			// }
-
-			// p {
-			// 	max-width:652px;
-			// 	margin:0 auto;
-			// 	font-size:2.5rem;
-			// 	line-height:2.5rem;
-
-			// }
 			&Content{
 				display:flex;
 				position:fixed;
@@ -899,10 +820,6 @@ blockquote {
 				}
 			}
 		}
-	// }
-			
-			// &Content {
-		
 
 		&Header {
 			width:100%;
@@ -911,10 +828,6 @@ blockquote {
 			position:relative;
 			z-index:20;
 			background:#fff;
-
-			@media(max-width:550px) {
-				//margin-top:25px;
-			}
 
 			img {
 				@media(max-width:550px) {
@@ -973,6 +886,10 @@ blockquote {
 						margin-left:15px;
 					}
 				}
+			}
+
+			&Para {
+				padding-top:0;
 			}
 		}
 
@@ -1366,10 +1283,15 @@ blockquote {
 				display:flex;
 				position:relative;
 				transition: all 600ms ease;
-				.learnMore {
+				/*.learnMore {
+					display: none;
 					text-align: center;
 					margin:40px auto 0;
 					min-width:100%;
+
+					@media(max-width: 650px){
+						display:block;
+					}
 
 					p {
 						max-width:225px;
@@ -1380,7 +1302,7 @@ blockquote {
 						font-family:'Brandon Grotesque', sans-serif;
 						font-weight:bold;
 					}
-				}
+				}*/
 			}
 
 			&Description {
@@ -1388,7 +1310,7 @@ blockquote {
 				display:flex;
 				justify-content: space-between;
 				min-width:100%;
-				margin-left:500px;
+				margin-left:100%;
 				transition: all 600ms ease;
 
 				@media(max-width:730px){
@@ -1396,6 +1318,10 @@ blockquote {
 					justify-content: flex-start;
 					margin: 59px 0 0 80px;
 					padding:0 40px;
+				}
+
+				&:first-of-type {
+					margin-left:0;
 				}
 
 				.info {
@@ -1472,6 +1398,7 @@ blockquote {
 					font-size: 2.5rem;
 					margin-bottom:40px;
 					line-height: 2.5rem;
+					font-weight:400;
 				}
 
 				.aboutQuote {

@@ -297,18 +297,18 @@ if (aboutPage) {
 		// Get the margin of aboutProcessContent
 		let aboutProcessContent = document.querySelector('.aboutProcessContent');
 		let description = document.querySelectorAll('.aboutProcessDescription');
-		let processMargin = window.getComputedStyle(aboutProcessContent).getPropertyValue('margin-right').slice(0,-2);
+		let processMargin = Number(window.getComputedStyle(aboutProcessContent).getPropertyValue('margin-right').slice(0,-2));
 
 		// Get the width of aboutProcessDescriptions
 		let descriptions = document.querySelector('.aboutProcessDescriptions');
-		let descriptionsWidth = window.getComputedStyle(descriptions).getPropertyValue('width').slice(0,-2);
+		let descriptionsWidth = Number(window.getComputedStyle(descriptions).getPropertyValue('width').slice(0,-2));
 
 		for (i = 0; i < description.length; i++) {
 			// Set the margin left on the description to the aboutProcessContent margin
 			description[i].style.marginLeft = `${processMargin}px`;
 
 			// Set the data-left of icon hovered equal to the margin-left + the width of the aboutProcessDesriptions * i - initial width
-			let leftOffset = (Number(processMargin) + Number(descriptionsWidth)) * (i + 1);
+			let leftOffset = (processMargin + descriptionsWidth) * (i + 1) - descriptionsWidth;
 				
 			if (window.matchMedia("(min-width: 730px)").matches) {
 
