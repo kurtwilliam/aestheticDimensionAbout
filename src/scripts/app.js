@@ -271,7 +271,17 @@ if (aboutPage) {
 		const options = {
 		  speed: 3000,
 		}
-		animateScrollTo(document.querySelector('.aboutHeader'),options)
+		let h = window.innerHeight;
+
+		if (window.matchMedia("(min-width: 770px)").matches) {
+			animateScrollTo(document.querySelector('.aboutHeader'),options)
+		} else /* if (window.matchMedia("(min-width: 650px)").matches) */{
+			let height = h - 60;
+			animateScrollTo( height ,options)
+		} /*else {
+			let height = h - ;
+			animateScrollTo( height ,options)
+		}*/
 	})
 
 	// Add event listener to icon to run 
@@ -305,20 +315,22 @@ if (aboutPage) {
 
 		for (i = 0; i < description.length; i++) {
 			// Set the margin left on the description to the aboutProcessContent margin
-			description[i].style.marginLeft = `${processMargin}px`;
+			description[i].style.marginRight = `${processMargin}px`;
 
 			// Set the data-left of icon hovered equal to the margin-left + the width of the aboutProcessDesriptions * i - initial width
-			let leftOffset = (processMargin + descriptionsWidth) * (i + 1) - descriptionsWidth;
+			let rightOffset = (processMargin + descriptionsWidth) * (i + 1) - (processMargin + descriptionsWidth);
 				
 			if (window.matchMedia("(min-width: 730px)").matches) {
 
 			} else {
-				description[i].style.marginLeft = `80px`;
-				leftOffset = (Number(descriptionsWidth) + 80) * (i + 1);
+				description[i].style.marginRight = `80px`;
+				rightOffset = (descriptionsWidth + 80) * (i + 1) - (descriptionsWidth + 80);
 			}
-			icons[i].dataset.left = leftOffset;
+			icons[i].dataset.right = rightOffset;
 		}
 		// Move the descriptions container
-		descriptions.style.right = `${this.dataset.left}px`
+		descriptions.style.left = `-${this.dataset.right}px`;
+		//descriptions.style.transition = 'all 600ms ease';
+
 	}
 }
