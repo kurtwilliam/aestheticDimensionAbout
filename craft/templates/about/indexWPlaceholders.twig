@@ -179,11 +179,11 @@
 								<blockquote>
 									<img src="assets/about/page2/“.svg" alt="">
 									<img src="assets/about/page2/R“.svg" alt="">
-									Lead designer Noteh Krauss has demonstrated time and time again that his greatest strength is listening to the brand vision. He then takes the time to process — wants vs. needs — explaining his approach in a clear, concise manner.
+									{{ entry.quote2Content }}
 								</blockquote>
 								<span>
-									Wayne Humphries<br>
-									CIO, Terracap Group of Companies
+									{{ entry.quote2Name }}<br>
+									{{ entry.quote2Company }}
 								</span>
 							</div>
 						</div>
@@ -194,20 +194,20 @@
 							<img src="assets/about/header.svg" alt=""><img src="assets/about/responsive/header.svg" alt="">
 							<img src="assets/about/responsive/header.svg" alt="">
 							<div class="aboutHeaderh2">
-								<h2>Approach</h2>
+								<h2>{{ entry.header3 }}</h2>
 							</div>
 						</div>
 						<div class="aboutApproachContent">
-							<h3>Integrated Design does not just refer to our process. We aim to create for the whole person.</h3>
+							<h3>{{ entry.intro }}</h3>
 							<div class="aboutQuote">
 								<blockquote>
 									<img src="assets/about/page2/“.svg" alt="">
 									<img src="assets/about/page2/R“.svg" alt="">
-									Lead designer Noteh Krauss has demonstrated time and time again that his greatest strength is listening to the brand vision. He then takes the time to process — wants vs. needs — explaining his approach in a clear, concise manner.
+									{{ entry.quote3Content }}
 								</blockquote>
 								<span>
-									Sergio Caballero,<br>
-									Founder, Illumine Films
+									{{ entry.quote3Name }}<br>
+									{{ entry.quote3Company }}
 								</span>
 							</div>
 							<div class="aboutApproachMan">
@@ -215,22 +215,22 @@
 								<img src="assets/about/responsive/person.svg" alt="" class="aboutApproachBodyDia">
 								<div class="aboutApproachText">
 									<span class="aboutApproachRow">
-										<span>Mind</span>
-										<span>Concept &amp; Content</span>
+										<span>{{ entry.man1Left }}</span>
+										<span>{{ entry.man1Right }}</span>
 										<img src="assets/about/rightArrow.svg" alt="">
 									</span>
 									<span class="aboutApproachRow">
-										<span>Eyes</span>
-										<span>Graphic Design</span><img src="assets/about/rightArrow.svg" alt="">
+										<span>{{ entry.man2Left }}</span>
+										<span>{{ entry.man2Right }}</span><img src="assets/about/rightArrow.svg" alt="">
 									</span>
 									<span class="aboutApproachRow">
-										<span>Heart</span>
-										<span>Emotional Appeal</span>
+										<span>{{ entry.man3Left }}</span>
+										<span>{{ entry.man3Right }}</span>
 										<img src="assets/about/rightArrow.svg" alt="">
 									</span>
 									<span class="aboutApproachRow">
-										<span>Hands</span>
-										<span>User Experience</span>
+										<span>{{ entry.man4Left }}</span>
+										<span>{{ entry.man4Right }}</span>
 										<img src="assets/about/rightArrow.svg" alt="">
 									</span>
 								</div>
@@ -244,44 +244,42 @@
 							<img src="assets/about/responsive/header.svg" alt="">
 							<img src="assets/about/responsive/header.svg" alt="">
 							<div class="aboutHeaderh2">
-								<h2>Our Brand</h2>
+								<h2>{{ entry.header4 }}</h2>
 							</div>
 						</div>
 						<div class="aboutBrandContent">
-							<p>Many ask, what is the meaning behind our unique logo and brand? </p>
-							<p>The idea is that even diverse shapes or colors can fit together in a beautiful way. And that we need everything to come together in order to make the whole. </p>
-							<p>Each pattern also has a specific meaning, playing on different visual and intellectual concepts of Dimension.</p>
+							{{ entry.description }}
 							<div class="aboutBrandRows">
 								<div class="aboutBrandRow">
-									<h3>Shadow</h3>
+									<h3>{{ entry.row1Name }}</h3>
 									<img src="assets/about/brand1.svg" alt="">
 									<div class="info">
-										<h3>Shadow</h3>
-										<p>The About pattern uses shadow as it’s visual dimensional quality. The idea is that Aesthetic Dimension is standing up to add a different perspective to the field of design.</p>
+										<h3>{{ entry.row1Name }}</h3>
+										<p>{{ entry.row1Content }}</p>
 									</div>
 								</div>
 								<div class="aboutBrandRow">
-									<h3>Perspective</h3>
+									<h3>{{ entry.row2Name }}</h3>
 									<img src="assets/about/brand2.svg" alt="">
 									<div class="info">
-										<h3>Perspective</h3>
-										<p>Perspective was one of the greatest artistic innovations of the Rennaisance towards creating lifelike imagery. Each box represents a project, and a further building block for our company.</p>
+										<h3>{{ entry.row2Name }}</h3>
+										<p>{{ entry.row2Content }}</p>
 									</div>
 								</div>
 								<div class="aboutBrandRow">
-									<h3>Shading</h3>
+									<h3>{{ entry.row3Name }}</h3>
 									<img src="assets/about/brand3.png" alt="">
 									<div class="info">
-										<h3>Shading</h3>
-										<p>The gradient is used for the Blog as it represents the transition of thought through innovation and discussion. Furthermore, it represents the layers and nuance of this process.</p>
+										<h3>{{ entry.row3Name }}</h3>
+										<p>{{ entry.row3Content }}</p>
 									</div>
 								</div>
 								<div class="aboutBrandRow">
-									<h3>Nature</h3>
+									<h3>{{ entry.row4Name }}</h3>
 									<img src="assets/about/brand4.svg" alt="">
 									<div class="info">
-										<h3>Nature</h3>
-										<p>Our own imagination and experiences shape the way we see things. The leaf pattern also reminds us of our roots in nature within modern existance.</p>
+										<h3>{{ entry.row4Name }}</h3>
+										<p>{{ entry.row4Content }}</p>
 									</div>
 								</div>
 							</div>
@@ -289,8 +287,8 @@
 					</section>
 					<img class="aboutFooterImg" src="assets/about/footerLogo.svg" alt="">
 					<div class="aboutFooter">
-						<p>Integrated Design™ is a trademark of Aesthetic Dimension</p>
-						<p>&copy; 2017</p>
+						<p>{{ entry.footerLeft }}</p>
+						<p>{{ entry.footerRight }}</p>
 					</div>
 				</div>
 			</div>
