@@ -15,12 +15,10 @@ homeSVG.addEventListener('mouseout', homeOut);
 
 // run hover function and hoverout function
 function homeOver(x) {
-	// home.classList.add('vHiddenHome')
 	homeHover.classList.remove('vHiddenHome')
 }
 
 function homeOut(x) {
-	// home.classList.remove('vHiddenHome')
 	homeHover.classList.add('vHiddenHome')
 }
 
@@ -81,7 +79,6 @@ function windowResize() {
 			// else move it back
 			} else {
 				leftColumn.style.top = '-330px'
-				// burger.classList.add('open')
 			}
 		});
 	}
@@ -103,12 +100,10 @@ function resize() {
 			if (burger.classList.contains('open')) {
 				leftColumn.style.top = '0'
 				leftColumn.style.left = '0'
-				// burger.classList.remove('open')
 			// else move it back
 			} else {
 				leftColumn.style.top = '-330px'
 				leftColumn.style.left = '0'
-				// burger.classList.add('open')
 			}
 		});
 		burger.classList.add('mobileBurger');
@@ -123,15 +118,10 @@ function resize() {
 			if (burger.classList.contains('open')) {
 				leftColumn.classList.remove('under300Lleft')
 				leftColumn.style.top = '0'
-
-				// burger.classList.remove('open')
 			// else move it back
 			} else {
 				leftColumn.classList.add('under300Lleft')
 				leftColumn.style.top = '0'
-
-
-				// burger.classList.add('open')
 			}
 		});
 	}
@@ -161,22 +151,10 @@ function testScroll(){
 		burger.addEventListener('click', (e) => {
 			// if burger has class of open move menu over
 			if (burger.classList.contains('open')) {
-				// leftColumn.style.left = '0'
-				// leftColumn.style.top = '0'
-
 				rightColumn.classList.remove('under300R');
-				//aboutTop.classList.remove('under300About');
-
-				// burger.classList.remove('open')
 			// else move it back
 			} else {
-				// leftColumn.style.left = '-22.5%'
-				// leftColumn.style.top = '0'
-
-				//aboutTop.classList.add('under300About');
 				rightColumn.classList.add('under300R');
-
-				// burger.classList.add('open')
 			}
 		});	
 		// if the scroll is lower than 250px from top
@@ -188,10 +166,6 @@ function testScroll(){
 			rightColumn.classList.add('under300R');
 			burger.classList.add('under300Burger');
 			burger.classList.remove('vHidden');
-			//aboutTop.classList.add('under300About');
-
-			// leftColumn.style.left = '-22.5%'
-
 		} else {
 			// if the scroll isn't lower than 250px from top move back to normal setup and make right sidebar normal 
 			leftColumn.classList.remove('under300L');
@@ -199,10 +173,6 @@ function testScroll(){
 			burger.classList.add('vHidden');
 			burger.classList.remove('under300Burger');
 			leftColumn.classList.remove('under300Lleft');
-			//aboutTop.classList.remove('under300About');
-			
-			// leftColumn.style.left = '0'
-			// responsiveTitle.classList.add('hidden')
 		}
 	} 
 }
@@ -275,13 +245,10 @@ if (aboutPage) {
 
 		if (window.matchMedia("(min-width: 770px)").matches) {
 			animateScrollTo(document.querySelector('.aboutHeader'),options)
-		} else /* if (window.matchMedia("(min-width: 650px)").matches) */{
-			let height = h - 60;
+		} else {
+			let height = h - 5;
 			animateScrollTo( height ,options)
-		} /*else {
-			let height = h - ;
-			animateScrollTo( height ,options)
-		}*/
+		}
 	})
 
 	// Add event listener to icon to run 
@@ -330,7 +297,5 @@ if (aboutPage) {
 		}
 		// Move the descriptions container
 		descriptions.style.left = `-${this.dataset.right}px`;
-		//descriptions.style.transition = 'all 600ms ease';
-
 	}
 }

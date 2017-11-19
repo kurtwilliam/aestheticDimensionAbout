@@ -54,7 +54,7 @@
 							<img src="assets/about/responsive/header.svg" alt="">
 							<img src="assets/about/responsive/header.svg" alt="">
 							<div class="aboutHeaderh2">
-								<h2>Systems We Build</h2>
+								<h2>{{ entry.header1 }}</h2>
 							</div>
 						</div>
 						<div class="aboutSystemsContent">
@@ -65,9 +65,9 @@
 										<img src="assets/about/page2/Tag2.svg" alt="">
 									</div>
 									<div class="aboutSystemsBoxTop">
-										<p>Brands &amp; Websites</p>
+										<p>{{ entry.yellowBox1Title }}</p>
 									</div>
-									<p>Dynamic brands and websites that tell your story while taking your company to a whole other level.</p>
+									<p>{{ entry.yellowBox1Content }}</p>
 									<div class="aboutSystemsBoxBottom"></div>
 								</div>
 								<div class="aboutSystemsBox aboutSystemsBox2">
@@ -75,9 +75,9 @@
 										<img src="assets/about/page2/Computer.svg" alt="">
 									</div>
 									<div class="aboutSystemsBoxTop">
-										<p>Web &amp; Mobile Apps</p>
+										<p>{{ entry.yellowBox2Title }}</p>
 									</div>
-									<p>Intelligent app design and development built to fit your business model and engage your users.</p>
+									<p>{{ entry.yellowBox2Content }}</p>
 									<div class="aboutSystemsBoxBottom"></div>
 								</div>
 								<div class="aboutSystemsBox aboutSystemsBox3">
@@ -86,9 +86,9 @@
 										<img src="assets/about/responsive/mobileSignage.svg" alt="">
 									</div>
 									<div class="aboutSystemsBoxTop">
-										<p>Exhibits &amp; Signage</p>
+										<p>{{ entry.yellowBox3Title }}</p>
 									</div>
-									<p>Immersive, multi-layered 3D assets that display thoughtfully curated information in a beautiful way.</p>
+									<p>{{ entry.yellowBox3Content }}</p>
 									<div class="aboutSystemsBoxBottom"></div>
 								</div>
 							</div>
@@ -96,11 +96,11 @@
 								<blockquote>
 									<img src="assets/about/page2/“.svg" alt="">
 									<img src="assets/about/page2/R“.svg" alt="">
-										Aesthetic Dimension’s proposal was cost effective and the results exceeded our expectations. Noteh and his team led  us through a process of self-reflection and evaluation that culminated in a web presence that reflects our true values and what we are all about and aspire to be. 
+									{{ entry.quote1content }}
 								</blockquote>
 								<span>
-									Wayne Humphries<br>
-									CIO, Terracap Group of Companies
+									{{ entry.quote1name }}<br>
+									{{ entry.quote1company }}
 								</span>
 							</div>
 						</div>
@@ -112,7 +112,7 @@
 							<img src="assets/about/responsive/header.svg" alt="">
 							<img src="assets/about/responsive/header.svg" alt="">
 							<div class="aboutHeaderh2">
-								<h2>Process</h2>
+								<h2>{{ entry.header2 }}</h2>
 							</div>
 						</div>
 						<div class="aboutProcessContent">
@@ -139,41 +139,40 @@
 								</div>
 							</div>
 							<div class="aboutProcessDescriptions">
-								<!--<div class="learnMore"><p>Touch an icon to learn more<p></div>-->
 								<div class="aboutProcessDescription aboutHidden" id="strategy">
 									<div class="info">
-										<h3>Strategy &amp; Research</h3>
+										<h3>{{ entry.slider1Title }}</h3>
 										<span>1.</span>
 									</div>
-									<p>Each project begins with a deep dive into the strategy of whichever organization we work with. What problem is the design aiming to solve? How will the product product be used? By Whom? Going forward, everything we create will be both a reflection and execution of the organization’s strategy.</p>
+									<p>{{ entry.slider5Content }}</p>
 								</div>
 								<div class="aboutProcessDescription aboutHidden" id="concept">
 									<div class="info">
-										<h3>Concept</h3>
+										<h3>{{ entry.slider2Title }}</h3>
 										<span>2.</span>
 									</div>
-									<p>The concept stage is where the strategy is executed into the first tangible assets. For example, for a website this might be a sitemap and wireframes or for a brand it may be the logo and a preliminary colour scheme. There is a series of back and forth with the client to refine the components and direction.</p>
+									<p>{{ entry.slider2Content }}</p>
 								</div>
 								<div class="aboutProcessDescription aboutHidden" id="design">
 									<div class="info">
-										<h3>Design Framework</h3>
+										<h3>{{ entry.slider3Title }}</h3>
 										<span>3.</span>
 									</div>
-									<p>In the Design Framework stage, the components created in the concept stage become active platforms. For example, in a Mobile application the UI/UX will be presented to the client. The design is refined through discussions with the client until the specifications and final look and feel are thorough and complete.</p>
+									<p>{{ entry.slider3Content }}</p>
 								</div>
 								<div class="aboutProcessDescription aboutHidden" id="web">
 									<div class="info">
-										<h3>Web &amp; Content Development</h3>
+										<h3>{{ entry.slider4Title }}</h3>
 										<span>4.</span>
 									</div>
-									<p>With a clear visual framework, we now know exactly how much content we need and where. We also know exactly how an application will function. This allows the web and content development to happen at the same time, precisely and efficently. </p>
+									<p>{{ entry.slider4Content }}</p>
 								</div>
 								<div class="aboutProcessDescription aboutHidden" id="deployment">
 									<div class="info">
-										<h3>Deployment</h3>
+										<h3>{{ entry.slider5Title }}</h3>
 										<span>5.</span>
 									</div>
-									<p>Content is plugged into the now coded product bringing the two parts of the last stage together. The design product is handed over to the client along with any necessary documentation. </p>
+									<p>{{ entry.slider5Content }}</p>
 								</div>
 							</div>
 							<div class="aboutQuote">
