@@ -760,7 +760,7 @@ blockquote {
 				img.aboutTopArrow {
 					position:absolute;
 					height:25px;
-					bottom:2.66%;
+					bottom:3.33%;
 					left:50%;
 					transform:translate(-50%,0);
 					z-index:110;
@@ -769,24 +769,35 @@ blockquote {
 					animation: upDown 5s ease-in-out infinite;
 					position: absolute;
 
+					@media(max-width:770px) {
+						bottom:7.5%;
+						@keyframes upDown {
+						  0% {
+						    bottom:7.5%;
+						  }
+						  50% {
+						    bottom: 8.5%;
+						  }
+						  100% {
+						    bottom:7.5%;
+						  }
+						}
+					}
+
 					@media(min-width:601px){
 						@keyframes upDown {
 						  0% {
-						    bottom: 2.66%;
+						    bottom: 3.33%;
 						  }
 						  50% {
-						    bottom: 5%;
+						    bottom: 4.33%;
 						  }
 						  100% {
-						    bottom: 2.66%;
+						    bottom: 3.33%;
 						  }
 						}
 					}
 					
-
-					@media(max-width:600px){
-						bottom: 5%;
-					}
 					@media(max-width:600px){
 						@keyframes upDown {
 						  0% {
@@ -806,12 +817,13 @@ blockquote {
 					position: absolute;
 					z-index:100;
 					width:100%;
-					max-width:652px;
+					max-width:500px;
 					text-align: center;
 					top:255px;
 					left:50%;
 					transform: translate(-50%,0);
 					z-index:5;
+					font-weight:normal;
 
 					@media(max-width:1050px) {
 						max-width:90%;
@@ -1068,11 +1080,11 @@ blockquote {
 				}
 				@media(max-width:730px){
 					flex-direction: column;
-					margin: 0 auto 35px;
+					margin: 0 auto;
 					max-width:300px;
 				}
 				@media(max-width:500px){
-					margin: 0 40px 35px;
+					margin: 0 40px;
 					max-width: inherit;
 				}
 			}
@@ -1099,10 +1111,14 @@ blockquote {
 
 				p {
 					margin-top:21px;
-					margin-bottom:18px;
+					margin-bottom:45px;
 					font-size:2.5rem;
 					line-height: 3rem;
 					max-width:219px;
+
+					@media(max-width:730px) {
+						max-width:inherit;
+					}
 				}
 				&Top {
 					background:#F8E71C;
@@ -1249,6 +1265,11 @@ blockquote {
 					height:227px;
 					width:60px;
 				}
+
+				@media(max-width:375px){
+					height:192.95px;
+					width:44.931px;
+				}
 				
 				img {
 					position: absolute;
@@ -1287,12 +1308,20 @@ blockquote {
 						width:55px;
 						left:30px;
 					}
+					@media(max-width:375px){
+						height:46.75px;
+						width:46.75px;
+					}
 				}
 
 				.aPI2 img {
 					@media(max-width:550px){
 						height:61px;
 						width:68px;
+					}
+					@media(max-width:375px){
+						height:51.85px;
+						width:57.8px;
 					}
 				}
 
@@ -1301,6 +1330,10 @@ blockquote {
 						height:87px;
 						width:54px;
 					}
+					@media(max-width:375px){
+						height:73.95px;
+						width:45.9px;
+					}
 				}
 
 				.aPI4 img {
@@ -1308,12 +1341,20 @@ blockquote {
 						height:121px;
 						width:63px;
 					}
+					@media(max-width:550px){
+						height:102.85px;
+						width:53.55px;
+					}
 				}
 
 				.aPI5 img {
 					@media(max-width:550px){
 						height:57px;
 						width:52px;
+					}
+					@media(max-width:550px){
+						height:48.45px;
+						width:44.2px;
 					}
 				}
 
@@ -1339,6 +1380,26 @@ blockquote {
 				position:relative;
 				transition: all 600ms ease;
 				left:0;
+
+				.learnMore {
+ 					display:none;
+ 					text-align: center;
+ 					min-width:100%;
+
+ 					@media(max-width:730px) {
+ 						display:block;
+ 					}
+ 
+ 					p {
+ 						max-width:225px;
+ 						margin:59px auto 0;
+ 						font-size:3.5rem;
+ 						line-height: 3rem;
+ 						color:#868788;
+ 						font-family:'Brandon Grotesque', sans-serif;
+ 						font-weight:bold;
+ 					}
+				}
 			}
 
 			&Description {
@@ -1364,7 +1425,6 @@ blockquote {
 					display:flex;
 					flex-direction: column;
 					justify-content: space-between; 
-					height:198px;
 
 					@media(max-width:730px){
 						height:auto;
@@ -1394,7 +1454,7 @@ blockquote {
 				}
 
 				p {
-					width:459px;
+					width:470px;
 					font-size:25px;
 					@media(max-width:730px){
 						width:100%;

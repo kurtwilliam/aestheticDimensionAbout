@@ -291,7 +291,7 @@ if (aboutPage) {
 
 			} else {
 				description[i].style.marginRight = `80px`;
-				rightOffset = (descriptionsWidth + 80) * (i + 1) - (descriptionsWidth + 80);
+				rightOffset = (descriptionsWidth + 80) * (i + 1) - 80;
 			}
 			icons[i].dataset.right = rightOffset;
 		}
