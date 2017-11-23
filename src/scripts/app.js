@@ -275,7 +275,10 @@ if (aboutPage) {
 		let aboutProcessContent = document.querySelector('.aboutProcessContent');
 		let description = document.querySelectorAll('.aboutProcessDescription');
 		let processMargin = Number(window.getComputedStyle(aboutProcessContent).getPropertyValue('margin-right').slice(0,-2));
-
+		// if firefox fix left margin
+		if(navigator.userAgent.indexOf("Firefox") != -1 ) {
+		   processMargin = aboutProcessContent.getBoundingClientRect().left;
+		}
 		// Get the width of aboutProcessDescriptions
 		let descriptions = document.querySelector('.aboutProcessDescriptions');
 		let descriptionsWidth = Number(window.getComputedStyle(descriptions).getPropertyValue('width').slice(0,-2));
