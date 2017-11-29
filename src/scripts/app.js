@@ -261,8 +261,13 @@ if (aboutPage) {
 		icons[i].addEventListener('click', iconMouseOver);
 	}
 
+	let interval;
+
 	// runs on yellow rectangle hover
 	function iconMouseOver() {
+		// Reset slideshow when the mouse hovers
+		window.clearInterval(interval);
+
 		// add + remove the shadow/corner hover effect to icons
 		for (let i = 0; i < icons.length; i++) {
 			icons[i].classList.remove('descSelected');
@@ -283,13 +288,17 @@ if (aboutPage) {
 		let descriptions = document.querySelector('.aboutProcessDescriptions');
 		let descriptionsWidth = Number(window.getComputedStyle(descriptions).getPropertyValue('width').slice(0,-2));
 
+		let rightOffset;
+		let moveOffset;
+
 		for (i = 0; i < description.length; i++) {
 			// Set the margin left on the description to the aboutProcessContent margin
 			description[i].style.marginRight = `${processMargin}px`;
 
 			// Set the data-left of icon hovered equal to the margin-left + the width of the aboutProcessDesriptions * i - initial width
-			let rightOffset = (processMargin + descriptionsWidth) * (i + 1) - (processMargin + descriptionsWidth);
-				
+			moveOffset = processMargin + descriptionsWidth;
+			rightOffset = (processMargin + descriptionsWidth) * (i + 1) - (processMargin + descriptionsWidth);
+			
 			if (window.matchMedia("(min-width: 730px)").matches) {
 
 			} else {
@@ -298,7 +307,34 @@ if (aboutPage) {
 			}
 			icons[i].dataset.right = rightOffset;
 		}
+
 		// Move the descriptions container
-		descriptions.style.left = `-${this.dataset.right}px`;
+		let rightData = this.dataset.right;
+		descriptions.style.left = `-${rightData}px`;
+
+		// Run slideshow function every 3.5s
+		interval = window.setInterval(() => {
+			moveRight();
+		},3500);
+
+		// Calculate how far to move the item every 2 seconds
+		let totalOffset = rightData;
+		let thisCorner = this.querySelector('.corner');
+		function moveRight() {
+			// Set the right offset amount based off of the data attribute
+			totalOffset = Number(totalOffset) + Number(moveOffset);
+			if (totalOffset >= (moveOffset * 5)) {
+				totalOffset = 0;
+			}
+
+			// Add shadow to rectangle
+			for (let i = 0; i < icons.length; i++) {
+				icons[i].classList.remove('descSelected');
+				corners[i].style.display = 'none';
+			}
+			let rectangle = document.querySelector(`[data-right='${totalOffset}']`);
+			window.matchMedia("(min-width: 730px)").matches ? rectangle.classList.add('descSelected') : thisCorner.style.display = "block";
+			descriptions.style.left = `-${totalOffset}px`;
+		}
 	}
 }
