@@ -315,26 +315,48 @@ if (aboutPage) {
 		// Run slideshow function every 3.5s
 		interval = window.setInterval(() => {
 			moveRight();
-		},3500);
+		},2800);
 
 		// Calculate how far to move the item every 2 seconds
 		let totalOffset = rightData;
-		let thisCorner = this.querySelector('.corner');
 		function moveRight() {
-			// Set the right offset amount based off of the data attribute
-			totalOffset = Number(totalOffset) + Number(moveOffset);
-			if (totalOffset >= (moveOffset * 5)) {
-				totalOffset = 0;
-			}
+			if (window.matchMedia("(min-width: 730px)").matches) {
+				// Set the right offset amount based off of the data attribute
+				totalOffset = Number(totalOffset) + Number(moveOffset);
+				if (totalOffset >= (moveOffset * 5)) {
+					totalOffset = 0;
+				}
 
-			// Add shadow to rectangle
-			for (let i = 0; i < icons.length; i++) {
-				icons[i].classList.remove('descSelected');
-				corners[i].style.display = 'none';
+				// Add shadow to rectangle
+				for (let i = 0; i < icons.length; i++) {
+					icons[i].classList.remove('descSelected');
+					corners[i].style.display = 'none';
+				}
+				let rectangle = document.querySelector(`[data-right='${totalOffset}']`);
+				rectangle.classList.add('descSelected')
+
+				// Move descriptions element
+				descriptions.style.left = `-${totalOffset}px`;
+			} else {
+				// Set the right offset amount based off of the data attribute
+				totalOffset = Number(totalOffset) + Number(moveOffset) + 80;
+				if (totalOffset >= (moveOffset * 6)) {
+					totalOffset = moveOffset;
+				}
+
+				// Add corner to rectangle
+				for (let i = 0; i < icons.length; i++) {
+					corners[i].style.display = 'none';
+					icons[i].classList.remove('descSelected');
+				}
+
+				let rectangle = document.querySelector(`[data-right='${totalOffset}']`);
+				let thisCorner = rectangle.querySelector('.corner');
+				thisCorner.style.display = "block";
+
+				// Move descriptions element
+				descriptions.style.left = `-${totalOffset}px`;
 			}
-			let rectangle = document.querySelector(`[data-right='${totalOffset}']`);
-			window.matchMedia("(min-width: 730px)").matches ? rectangle.classList.add('descSelected') : thisCorner.style.display = "block";
-			descriptions.style.left = `-${totalOffset}px`;
 		}
 	}
 }

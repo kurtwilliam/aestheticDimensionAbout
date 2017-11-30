@@ -881,11 +881,11 @@ blockquote {
 
 					h1, h2{
 						font-family: "Calluna", serif;
-						font-size:4rem;
-						line-height:4rem;
+						font-size:2.5rem;
+						line-height:2.5rem;
 						width:100%;
 						color:white;
-						font-weight:normal;
+						font-weight:bold;
 
 						@media (max-width:1050px) {
 							font-size:2.5rem;
@@ -894,6 +894,7 @@ blockquote {
 						@media (max-width:770px) {
 							font-size:4rem;
 							line-height:4rem;
+							font-weight:normal;
 						}
 						@media (max-width:675px) {
 							font-size:2.5rem;
@@ -944,9 +945,9 @@ blockquote {
 					}
 
 					h2 {
-						margin:4rem auto;
+						margin:2.5rem auto;
 						@media(max-width:425px) {
-							margin-top:40px;
+							margin:40px auto;
 						}
 
 						@media(max-width:360px) {
