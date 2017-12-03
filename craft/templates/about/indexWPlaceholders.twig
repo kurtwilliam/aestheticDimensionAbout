@@ -39,9 +39,24 @@
 			<div class="rightColumn rightColumnAbout" id="rightColumn">
 				<section class="aboutTop">
 					<div class="aboutTopContent">
-						<img src="assets/about/headerAll.svg" alt="" class="aboutTopBg">
-						<img src="assets/about/headerAllIpad.svg" alt="" class="aboutTopBg">
-						<img src="assets/about/headerAllMobile.svg" alt="" class="aboutTopBg" id="aboutTopBgMobile">
+						<div class="aboutTopSVGs">
+							<img src="assets/about/svg1lines.svg" alt="">
+							<img src="assets/about/svg2hand.svg" alt="">
+							<img src="assets/about/svg3lightbulb.svg" alt="">
+							<img src="assets/about/svg4eye.svg" alt="">
+							<img src="assets/about/svg5brain.svg" alt="">
+							<img src="assets/about/svg6present.svg" alt="">
+							<img src="assets/about/svg7camera.svg" alt="">
+							<img src="assets/about/svg8map.svg" alt="">
+							<img src="assets/about/svg9heart.svg" alt="">
+							<img src="assets/about/svg10monitor.svg" alt="">
+						</div>
+						<img src="assets/about/mainLogo.png" alt="" class="aboutTopLogo">
+						<div class="text">
+							<h1>{{ entry.topparagraph1 }}</h1>
+							<h2>{{ entry.topparagraph2 }}</h2>
+							<p>{{ entry.topparagraph3 }}</p>
+						</div>
 						<img src="assets/about/downArrow.svg" alt="" class="aboutTopArrow">
 					</div>
 					<div class="aboutTopBlack"></div>
@@ -65,9 +80,9 @@
 										<img src="assets/about/page2/Tag2.svg" alt="">
 									</div>
 									<div class="aboutSystemsBoxTop">
-										<p>{{ entry.yellowBox1Title }}</p>
+										<p>{{ entry.yellowbox1title }}</p>
 									</div>
-									<p>{{ entry.yellowBox1Content }}</p>
+									<p>{{ entry.yellowbox1content }}</p>
 									<div class="aboutSystemsBoxBottom"></div>
 								</div>
 								<div class="aboutSystemsBox aboutSystemsBox2">
@@ -75,9 +90,9 @@
 										<img src="assets/about/page2/Computer.svg" alt="">
 									</div>
 									<div class="aboutSystemsBoxTop">
-										<p>{{ entry.yellowBox2Title }}</p>
+										<p>{{ entry.yellowbox2title }}</p>
 									</div>
-									<p>{{ entry.yellowBox2Content }}</p>
+									<p>{{ entry.yellowbox2content }}</p>
 									<div class="aboutSystemsBoxBottom"></div>
 								</div>
 								<div class="aboutSystemsBox aboutSystemsBox3">
@@ -86,9 +101,9 @@
 										<img src="assets/about/responsive/mobileSignage.svg" alt="">
 									</div>
 									<div class="aboutSystemsBoxTop">
-										<p>{{ entry.yellowBox3Title }}</p>
+										<p>{{ entry.yellowbox3title }}</p>
 									</div>
-									<p>{{ entry.yellowBox3Content }}</p>
+									<p>{{ entry.yellowbox3content }}</p>
 									<div class="aboutSystemsBoxBottom"></div>
 								</div>
 							</div>
@@ -96,11 +111,11 @@
 								<blockquote>
 									<img src="assets/about/page2/“.svg" alt="">
 									<img src="assets/about/page2/R“.svg" alt="">
-									{{ entry.quote1content }}
+										Aesthetic Dimension’s proposal was cost effective and the results exceeded our expectations. Noteh and his team led  us through a process of self-reflection and evaluation that culminated in a web presence that reflects our true values and what we are all about and aspire to be. 
 								</blockquote>
 								<span>
-									{{ entry.quote1name }}<br>
-									{{ entry.quote1company }}
+									Wayne Humphries<br>
+									CIO, Terracap Group of Companies
 								</span>
 							</div>
 						</div>
@@ -139,52 +154,52 @@
 								</div>
 							</div>
 							<div class="aboutProcessDescriptions">
-								<div class="learnMore"><p>Touch an icon to learn more<p></div>
+								<div class="learnMore"><p>{{ entry.tapicon }}<p></div>
 								<div class="aboutProcessDescription aboutHidden" id="strategy">
 									<div class="info">
-										<h3>{{ entry.slider1Title }}</h3>
+										<h3>{{ entry.slider1title }}</h3>
 										<span>1.</span>
 									</div>
-									<p>{{ entry.slider5Content }}</p>
+									<p>{{ entry.slider1content }}</p>
 								</div>
 								<div class="aboutProcessDescription aboutHidden" id="concept">
 									<div class="info">
-										<h3>{{ entry.slider2Title }}</h3>
+										<h3>{{ entry.slider2title }}</h3>
 										<span>2.</span>
 									</div>
-									<p>{{ entry.slider2Content }}</p>
+									<p>{{ entry.slider2content }}</p>
 								</div>
 								<div class="aboutProcessDescription aboutHidden" id="design">
 									<div class="info">
-										<h3>{{ entry.slider3Title }}</h3>
+										<h3>{{ entry.slider3title }}</h3>
 										<span>3.</span>
 									</div>
-									<p>{{ entry.slider3Content }}</p>
+									<p>{{ entry.slider3content }}</p>
 								</div>
 								<div class="aboutProcessDescription aboutHidden" id="web">
 									<div class="info">
-										<h3>{{ entry.slider4Title }}</h3>
+										<h3>{{ entry.slider4title }}</h3>
 										<span>4.</span>
 									</div>
-									<p>{{ entry.slider4Content }}</p>
+									<p>{{ entry.slider4content }}</p>
 								</div>
 								<div class="aboutProcessDescription aboutHidden" id="deployment">
 									<div class="info">
-										<h3>{{ entry.slider5Title }}</h3>
+										<h3>{{ entry.slider5title }}</h3>
 										<span>5.</span>
 									</div>
-									<p>{{ entry.slider5Content }}</p>
+									<p>{{ entry.slider5content }}</p>
 								</div>
 							</div>
 							<div class="aboutQuote">
 								<blockquote>
 									<img src="assets/about/page2/“.svg" alt="">
 									<img src="assets/about/page2/R“.svg" alt="">
-									{{ entry.quote2Content }}
+									{{ entry.quote2content }}
 								</blockquote>
 								<span>
-									{{ entry.quote2Name }}<br>
-									{{ entry.quote2Company }}
+									{{ entry.quote2name }}<br>
+									{{ entry.quote2company }}
 								</span>
 							</div>
 						</div>
@@ -204,11 +219,11 @@
 								<blockquote>
 									<img src="assets/about/page2/“.svg" alt="">
 									<img src="assets/about/page2/R“.svg" alt="">
-									{{ entry.quote3Content }}
+									{{ entry.quote3content }}
 								</blockquote>
 								<span>
-									{{ entry.quote3Name }}<br>
-									{{ entry.quote3Company }}
+									{{ entry.quote3name }}<br>
+									{{ entry.quote3company }}
 								</span>
 							</div>
 							<div class="aboutApproachMan">
@@ -216,22 +231,22 @@
 								<img src="assets/about/responsive/person.svg" alt="" class="aboutApproachBodyDia">
 								<div class="aboutApproachText">
 									<span class="aboutApproachRow">
-										<span>{{ entry.man1Left }}</span>
-										<span>{{ entry.man1Right }}</span>
+										<span>{{ entry.man1left }}</span>
+										<span>{{ entry.man1right }}</span>
 										<img src="assets/about/rightArrow.svg" alt="">
 									</span>
 									<span class="aboutApproachRow">
-										<span>{{ entry.man2Left }}</span>
-										<span>{{ entry.man2Right }}</span><img src="assets/about/rightArrow.svg" alt="">
+										<span>{{ entry.man2left }}</span>
+										<span>{{ entry.man2right }}</span><img src="assets/about/rightArrow.svg" alt="">
 									</span>
 									<span class="aboutApproachRow">
-										<span>{{ entry.man3Left }}</span>
-										<span>{{ entry.man3Right }}</span>
+										<span>{{ entry.man3left }}</span>
+										<span>{{ entry.man3right }}</span>
 										<img src="assets/about/rightArrow.svg" alt="">
 									</span>
 									<span class="aboutApproachRow">
-										<span>{{ entry.man4Left }}</span>
-										<span>{{ entry.man4Right }}</span>
+										<span>{{ entry.man4left }}</span>
+										<span>{{ entry.man4right }}</span>
 										<img src="assets/about/rightArrow.svg" alt="">
 									</span>
 								</div>
@@ -252,44 +267,44 @@
 							{{ entry.description }}
 							<div class="aboutBrandRows">
 								<div class="aboutBrandRow">
-									<h3>{{ entry.row1Name }}</h3>
+									<h3>{{ entry.row1name }}</h3>
 									<img src="assets/about/brand1.svg" alt="">
 									<div class="info">
-										<h3>{{ entry.row1Name }}</h3>
-										<p>{{ entry.row1Content }}</p>
+										<h3>{{ entry.row1name }}</h3>
+										<p>{{ entry.row1content }}</p>
 									</div>
 								</div>
 								<div class="aboutBrandRow">
-									<h3>{{ entry.row2Name }}</h3>
+									<h3>{{ entry.row2name }}</h3>
 									<img src="assets/about/brand2.svg" alt="">
 									<div class="info">
-										<h3>{{ entry.row2Name }}</h3>
-										<p>{{ entry.row2Content }}</p>
+										<h3>{{ entry.row2name }}</h3>
+										<p>{{ entry.row2content }}</p>
 									</div>
 								</div>
 								<div class="aboutBrandRow">
-									<h3>{{ entry.row3Name }}</h3>
+									<h3>{{ entry.row3name }}</h3>
 									<img src="assets/about/brand3.png" alt="">
 									<div class="info">
-										<h3>{{ entry.row3Name }}</h3>
-										<p>{{ entry.row3Content }}</p>
+										<h3>{{ entry.row3name }}</h3>
+										<p>{{ entry.row3content }}</p>
 									</div>
 								</div>
 								<div class="aboutBrandRow">
-									<h3>{{ entry.row4Name }}</h3>
+									<h3>{{ entry.row4name }}</h3>
 									<img src="assets/about/brand4.svg" alt="">
 									<div class="info">
-										<h3>{{ entry.row4Name }}</h3>
-										<p>{{ entry.row4Content }}</p>
+										<h3>{{ entry.row4name }}</h3>
+										<p>{{ entry.row4content }}</p>
 									</div>
 								</div>
 							</div>
 						</div>
 					</section>
-					<img class="aboutFooterImg" src="assets/about/footerLogo.svg" alt="">
+					<img class="aboutFooterImg" src="assets/about/footerLogo.png" alt="">
 					<div class="aboutFooter">
-						<p>{{ entry.footerLeft }}</p>
-						<p>{{ entry.footerRight }}</p>
+						<p>Integrated Design™ is a trademark of Aesthetic Dimension</p>
+						<p>All images &copy; 2017</p>
 					</div>
 				</div>
 			</div>

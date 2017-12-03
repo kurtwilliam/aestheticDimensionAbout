@@ -266,7 +266,7 @@ if (aboutPage) {
 	// runs on yellow rectangle hover
 	function iconMouseOver() {
 		// Reset slideshow when the mouse hovers
-		window.clearInterval(interval);
+		// window.clearInterval(interval);
 
 		// add + remove the shadow/corner hover effect to icons
 		for (let i = 0; i < icons.length; i++) {
@@ -313,50 +313,50 @@ if (aboutPage) {
 		descriptions.style.left = `-${rightData}px`;
 
 		// Run slideshow function every 3.5s
-		interval = window.setInterval(() => {
-			moveRight();
-		},2800);
+		// interval = window.setInterval(() => {
+		// 	moveRight();
+		// },2800);
 
-		// Calculate how far to move the item every 2 seconds
-		let totalOffset = rightData;
-		function moveRight() {
-			if (window.matchMedia("(min-width: 730px)").matches) {
-				// Set the right offset amount based off of the data attribute
-				totalOffset = Number(totalOffset) + Number(moveOffset);
-				if (totalOffset >= (moveOffset * 5)) {
-					totalOffset = 0;
-				}
+		// // Calculate how far to move the item every 2 seconds
+		// let totalOffset = rightData;
+		// function moveRight() {
+		// 	if (window.matchMedia("(min-width: 730px)").matches) {
+		// 		// Set the right offset amount based off of the data attribute
+		// 		totalOffset = Number(totalOffset) + Number(moveOffset);
+		// 		if (totalOffset >= (moveOffset * 5)) {
+		// 			totalOffset = 0;
+		// 		}
 
-				// Add shadow to rectangle
-				for (let i = 0; i < icons.length; i++) {
-					icons[i].classList.remove('descSelected');
-					corners[i].style.display = 'none';
-				}
-				let rectangle = document.querySelector(`[data-right='${totalOffset}']`);
-				rectangle.classList.add('descSelected')
+		// 		// Add shadow to rectangle
+		// 		for (let i = 0; i < icons.length; i++) {
+		// 			icons[i].classList.remove('descSelected');
+		// 			corners[i].style.display = 'none';
+		// 		}
+		// 		let rectangle = document.querySelector(`[data-right='${totalOffset}']`);
+		// 		rectangle.classList.add('descSelected')
 
-				// Move descriptions element
-				descriptions.style.left = `-${totalOffset}px`;
-			} else {
-				// Set the right offset amount based off of the data attribute
-				totalOffset = Number(totalOffset) + Number(moveOffset) + 80;
-				if (totalOffset >= (moveOffset * 6)) {
-					totalOffset = moveOffset;
-				}
+		// 		// Move descriptions element
+		// 		descriptions.style.left = `-${totalOffset}px`;
+		// 	} else {
+		// 		// Set the right offset amount based off of the data attribute
+		// 		totalOffset = Number(totalOffset) + Number(moveOffset) + 80;
+		// 		if (totalOffset >= (moveOffset * 6)) {
+		// 			totalOffset = moveOffset;
+		// 		}
 
-				// Add corner to rectangle
-				for (let i = 0; i < icons.length; i++) {
-					corners[i].style.display = 'none';
-					icons[i].classList.remove('descSelected');
-				}
+		// 		// Add corner to rectangle
+		// 		for (let i = 0; i < icons.length; i++) {
+		// 			corners[i].style.display = 'none';
+		// 			icons[i].classList.remove('descSelected');
+		// 		}
 
-				let rectangle = document.querySelector(`[data-right='${totalOffset}']`);
-				let thisCorner = rectangle.querySelector('.corner');
-				thisCorner.style.display = "block";
+		// 		let rectangle = document.querySelector(`[data-right='${totalOffset}']`);
+		// 		let thisCorner = rectangle.querySelector('.corner');
+		// 		thisCorner.style.display = "block";
 
-				// Move descriptions element
-				descriptions.style.left = `-${totalOffset}px`;
-			}
-		}
+		// 		// Move descriptions element
+		// 		descriptions.style.left = `-${totalOffset}px`;
+		// 	}
+		// }
 	}
 }

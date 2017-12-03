@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<title>{% if title is defined %}{{ title }} - {% endif %}{{ siteName }}</title>
 	<meta name="keywords" content="aesthetic, dimension, design">
-	<link rel="stylesheet" href="http://localhost:8888/styles/style.css">
+	<link rel="stylesheet" href="{{ site.url }}/styles/style.css">
 	<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico"/>
 	<meta name="description" content="Aesthetic Dimension is a strategic and holistic design firm for the interconnected contemporary world. We create integrated, smart and effective digital and physical systems.">
 
@@ -42,9 +42,18 @@
 	<meta property="og:url" content="{{ siteUrl }}">
 
 	{% endif %}
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-110585053-1"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'UA-110585053-1');
+	</script>
 </head>
 	{% block content %}{% endblock %}
 </main>
-<script src="http://localhost:8888/scripts/app.js"></script>
+<script src="{{ site.url }}/scripts/app.js"></script>
 </body>
 </html>
