@@ -15,11 +15,6 @@ input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}b
 	url('../Brandon-Grotesque/BrandonGrotesque-Medium.ttf') format('truetype'), 
 	url('../Brandon-Grotesque/Brandon_med.otf') format('opentype');
 }
-// @font-face { font-family: BrandonGrotesque; font-weight: medium; 
-// 	src: url('../Brandon-Grotesque/BrandonGrotesque-Medium.woff') format('woff'), 
-// 	url('../Brandon-Grotesque/BrandonGrotesque-Medium.ttf') format('truetype'), 
-// 	url('../Brandon-Grotesque/Brandon_med.otf') format('opentype');
-// }
 @font-face { font-family: 'Brandon Grotesque'; font-weight: bold; font-style: normal;
 	src: url('../Brandon-Grotesque/BrandonGrotesque-Bold.woff') format('woff'),
 	url('../Brandon-Grotesque/BrandonGrotesque-Bold.ttf') format('truetype'), 
@@ -1030,10 +1025,6 @@ blockquote {
 					width:auto;
 					height:auto;
 					transform:translate(0,0) scale(0.5);
-
-					@media(max-width:770px) {
-						// transform:translate(0,0) scale(1);
-					}
 				}
 				img:nth-child(1) {
 					left:3.6158%;
@@ -2363,9 +2354,6 @@ blockquote {
 			@media(max-width:1050px){
 				margin-top:12px;
 				padding-top: 0;
-			}
-			@media(max-width:770px){
-				// margin-top:0;
 			}
 			@media(max-width:650px){
 				margin-top:24px;
