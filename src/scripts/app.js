@@ -255,6 +255,10 @@ if (aboutPage) {
 	const icons = document.querySelectorAll('.aboutProcessIcon');
 	const corners = document.querySelectorAll('.corner');
 
+	if (window.matchMedia("(min-width: 730px)").matches) { } else {
+		corners[0].style.display = 'block';
+	}
+
 	let i;
 	for (i = 0; i < icons.length; i++) {
 		icons[i].addEventListener('mouseover', iconMouseOver);

@@ -111,11 +111,11 @@
 								<blockquote>
 									<img src="assets/about/page2/“.svg" alt="">
 									<img src="assets/about/page2/R“.svg" alt="">
-										Aesthetic Dimension’s proposal was cost effective and the results exceeded our expectations. Noteh and his team led  us through a process of self-reflection and evaluation that culminated in a web presence that reflects our true values and what we are all about and aspire to be. 
+										{{ entry.quote1content }}
 								</blockquote>
 								<span>
-									Wayne Humphries<br>
-									CIO, Terracap Group of Companies
+									{{ entry.quote1name }}<br>
+									{{ entry.quote1company }}
 								</span>
 							</div>
 						</div>
@@ -132,7 +132,7 @@
 						</div>
 						<div class="aboutProcessContent">
 							<div class="aboutProcessIcons">
-								<div class="aboutProcessIcon aPI1" data-desc="strategy">
+								<div class="aboutProcessIcon aPI1 descSelected" data-desc="strategy">
 									<img src="assets/about/process/1.svg" alt="">
 									<div class="corner"></div>
 								</div>
@@ -303,8 +303,8 @@
 					</section>
 					<img class="aboutFooterImg" src="assets/about/footerLogo.png" alt="">
 					<div class="aboutFooter">
-						<p>Integrated Design™ is a trademark of Aesthetic Dimension</p>
-						<p>All images &copy; 2017</p>
+						<p>{{ entry.footerleft }}</p>
+						<p>{{ entry.footerright }}</p>
 					</div>
 				</div>
 			</div>
