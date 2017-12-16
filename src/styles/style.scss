@@ -39,6 +39,10 @@ input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer;}b
 	src: url('../Calluna/Calluna-It.woff') format('woff'), 
 	url('../Calluna/Calluna-It.ttf') format('truetype');
 }
+@font-face { font-family: Calluna; font-weight:400; font-style:normal;
+	src: url('../Calluna/Calluna-Light.woff') format('woff'), 
+	url('../Calluna/Calluna-Light.ttf') format('truetype'); 
+}
 
 html{ margin:0; padding:0; }
 
@@ -965,6 +969,7 @@ blockquote {
 						line-height:2.5rem;
 						width:100%;
 						color:white;
+						font-weight:300;
 
 						@media (max-width:770px) {
 							margin-top:41px;
