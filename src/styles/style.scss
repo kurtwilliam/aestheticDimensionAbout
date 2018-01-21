@@ -2784,6 +2784,10 @@ blockquote {
 			a, u{
 				font-size: 2rem;
 				font-family: "Calluna", serif;
+
+				@media (max-width: 500px){
+					font-size: 2.5rem;
+				}
 			}
 			a:visited {
 				color:blue;
