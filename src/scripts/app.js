@@ -216,7 +216,7 @@ if (blogSearch) {
 let mailLink = document.querySelector('.mailLink');
 
 if (mailLink) {
-	var index = mailLink.stringify.indexOf('@')
+	// var index = mailLink.stringify.indexOf('@')
 }
 
 // Keep height fixed for blog page so scroll function doesn't mess up at bottom
