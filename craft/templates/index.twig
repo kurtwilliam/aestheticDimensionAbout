@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
+	{% set homepage = craft.entries.slug('homepage').first() %}
+
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-110585053-1"></script>
 	<script>
@@ -16,6 +18,7 @@
 
 	<meta name="keywords" content="aesthetic, dimension, design">
 	<link rel="stylesheet" href="/styles/style.css">
+	<!-- <link type="text/css" media="screen" rel="stylesheet" href="/styles/awwwards.css" /> -->
 		
 	<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico"/>
 	<meta name="description" content="Aesthetic Dimension is a strategic and holistic design firm for the interconnected contemporary world. We create integrated, smart and effective digital and physical systems.">
@@ -375,6 +378,14 @@
 			<div class="hidden" id="homeSVG"></div>
 		</section>
 	</header>
+	{% if homepage.awwwardsToggle %}
+	   <div id="awwwards" class="nominee black right">
+	   	<a href="http://www.awwwards.com" target="_blank">Awwwards</a>
+	   </div>
+	{% else %}
+	   <div></div>
+	{% endif %}
+	
 	<script>	
 		// Check to see if on home page
 
